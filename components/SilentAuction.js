@@ -14,7 +14,7 @@ const SilentAuction = (props) => {
     <Item description={item.description} price={item.price} />
   ));
 
-  return <div class="flex flex-wrap">{items}</div>;
+  return <div class="flex flex-wrap justify-evenly">{items}</div>;
 };
 
 export default SilentAuction;
