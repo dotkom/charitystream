@@ -6,8 +6,8 @@
   grid-area: chat;
 }
 
-.beer {
-  grid-area: beer;
+.auction {
+  grid-area: auction;
 }
 
 .stretch {
@@ -27,6 +27,7 @@
   grid-template-columns: 2fr 1fr 1fr;
   grid-template-rows: 2fr 1fr;
   grid-template-areas: 
-    "stream chat beer"
-    "stretchGoals stretchGoals vipps"
+    "stream chat vipps"
+    "stretchGoals stretchGoals stretchGoals"
+    "auction auction auction"
 }
