@@ -1,4 +1,5 @@
 import useSWR from "swr";
+import dynamic from "next/dynamic";
 import StretchGoals from "../components/StretchGoals";
 import SilentAuction from "../components/SilentAuction";
 import Vipps from "../components/Vipps";
