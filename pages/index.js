@@ -27,7 +27,7 @@ export default function Index() {
           <Vipps items={data.vipps} />
         </div>
         <div className={styles.stretch + " " + styles.pane}>
-          <StretchGoals />
+          <StretchGoals stretchGoals={data.stretchGoals} saldo={data.saldo} />
         </div>
         <div className={styles.auction + " " + styles.pane}>
           <SilentAuction items={data.auctions} />
