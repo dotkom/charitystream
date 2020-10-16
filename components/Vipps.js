@@ -19,14 +19,26 @@ const Vipp = (props) => {
   );
 };
 
+const TopVipp = ({ vipp }) => {
+  return (
+    <div>
+      <h5>Største donasjon:</h5>
+      <Vipp name={vipp.name} amount={item.amount} />
+    </div>
+  );
+};
+
 const Vipps = (props) => {
   const vipps = props.items
     .slice(0, 6)
-    .map((item, index) => (
-      <Vipp key={index} name={item.name} amount={item.amount} />
-    ));
+    .map((item) => <Vipp name={item.name} amount={item.amount} />);
 
-  return <div className="flex flex-col">{vipps}</div>;
+  return (
+    <div class="flex flex-col">
+      <TopVipp vipp={props.topDonor} />
+      {vipps}
+    </div>
+  );
 };
 
 export default Vipps;

@@ -10,7 +10,9 @@ import Chat from "../components/Chat";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Index() {
-  const { data, error } = useSWR("/api/state", fetcher, { refreshInterval: 2500 });
+  const { data, error } = useSWR("/api/state", fetcher, {
+    refreshInterval: 2500,
+  });
 
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
@@ -25,7 +27,7 @@ export default function Index() {
           <Chat slidoView={data.slidoView.type} />
         </div>
         <div className={styles.vipps + " " + styles.pane}>
-          <Vipps items={data.vipps} />
+          <Vipps items={data.vipps} topDonor={data.topDonor} />
         </div>
         <div className={styles.stretch + " " + styles.pane}>
           <StretchGoals stretchGoals={data.stretchGoals} saldo={data.saldo} />
