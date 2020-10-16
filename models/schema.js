@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
 
-delete mongoose.connection.models['Auction'];
-delete mongoose.connection.models['Saldo'];
-delete mongoose.connection.models['Vips'];
-delete mongoose.connection.models['StreamLink'];
-delete mongoose.connection.models['SlidoView'];
-delete mongoose.connection.models['StretchGoal'];
+delete mongoose.connection.models["Auction"];
+delete mongoose.connection.models["Saldo"];
+delete mongoose.connection.models["Vips"];
+delete mongoose.connection.models["StreamLink"];
+delete mongoose.connection.models["SlidoView"];
+delete mongoose.connection.models["StretchGoal"];
 
 const AuctionSchema = new mongoose.Schema(
   {
@@ -18,7 +18,7 @@ export const Auction = mongoose.model("Auction", AuctionSchema);
 
 const SaldoSchema = new mongoose.Schema(
   {
-    current: { type: Number, default: 0 }
+    current: { type: Number, default: 0 },
   },
   { autoCreate: true }
 );
@@ -52,7 +52,7 @@ export const SlidoView = mongoose.model("SlidoView", SlidoViewSchema);
 const StretchGoalSchema = new mongoose.Schema(
   {
     description: { type: String, default: "" },
-    goal: { type: Number, default: 0 }
+    goal: { type: Number, default: 0 },
   },
   { autoCreate: true }
 );

@@ -1,6 +1,9 @@
 const Vip = (props) => {
   return (
-    <div class="flex items-center overflow-hidden m-2 rounded-full"style={{background: "#ff5b24"}}>
+    <div
+      class="flex items-center overflow-hidden m-2 rounded-full"
+      style={{ background: "#ff5b24" }}
+    >
       <img
         src="https://lh3.googleusercontent.com/0PbbTOfd4p_kT2iumjByeiQoj4AkK5aHFFeAe61BeW9saYtpY0z4S0CPBjJUN188fpg"
         width="50px"

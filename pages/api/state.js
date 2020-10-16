@@ -1,6 +1,13 @@
 import mongoose from "mongoose";
 
-import { Auction, Saldo, Vips, StreamLink, SlidoView, StretchGoal  } from "../../models/schema.js";
+import {
+  Auction,
+  Saldo,
+  Vips,
+  StreamLink,
+  SlidoView,
+  StretchGoal,
+} from "../../models/schema.js";
 
 const username = process.env.DATABASE_USER;
 const password = process.env.DATABASE_PASSWORD;
@@ -32,7 +39,7 @@ export default async function handler(_, res) {
       vips,
       streamLink,
       slidoView,
-      stretchGoal
+      stretchGoal,
     })
   );
 }
