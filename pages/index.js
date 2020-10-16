@@ -18,10 +18,10 @@ export default function Index() {
     <>
       <div className={styles.parent + " h-screen"}>
         <div className={styles.stream + " " + styles.pane + " text-lg"}>
-          <Stream />
+          <Stream streamId={data.streamLink} />
         </div>
         <div className={styles.chat + " " + styles.pane}>
-          <Chat />
+          <Chat slidoView={data.slidoView} />
         </div>
         <div className={styles.beer + " " + styles.pane}>
           <Vips items={data.vips} />

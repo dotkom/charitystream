@@ -1,4 +1,4 @@
-const Stream = () => {
+const Stream = ({ streamId }) => {
   return (
     <div>
       <div style={{ display: "flex" }}>
@@ -6,7 +6,7 @@ const Stream = () => {
           <iframe
             width="800"
             height="500"
-            src="https://www.youtube.com/embed/DdM2dUG7Iiw?autoplay=1"
+            src={`https://www.youtube.com/embed/${streamId}?autoplay=1`}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
