@@ -17,7 +17,7 @@ export default async function handler(_, res) {
 
   const auctions = await Auction.find({});
   const sales = await Sales.find({});
-  const vips = await Vips.find({});
+  const vips = await Vips.find({}).sort({'date': -1}).limit(10);;
 
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
@@ -26,7 +26,7 @@ export default async function handler(_, res) {
     JSON.stringify({
       auctions: auctions,
       sales: sales,
-      vips: vips,
+      vips: vips.reverse(),
     })
   );
 }
