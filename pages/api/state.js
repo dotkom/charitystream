@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-import { Auction, Sales, Vips } from "../../models/schema.js";
+import { Auction, Saldo, Vips, StreamLink, SlidoView, StretchGoal  } from "../../models/schema.js";
 
 const username = process.env.DATABASE_USER;
 const password = process.env.DATABASE_PASSWORD;
@@ -16,17 +16,23 @@ export default async function handler(_, res) {
   });
 
   const auctions = await Auction.find({});
-  const sales = await Sales.find({});
-  const vips = await Vips.find({}).sort({'date': -1}).limit(10);;
+  const saldo = await Saldo.find({});
+  const vips = await Vips.find({});
+  const streamLink = await StreamLink.find({});
+  const slidoView = await SlidoView.find({});
+  const stretchGoal = await StretchGoal.find({});
 
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
 
   res.end(
     JSON.stringify({
-      auctions: auctions,
-      sales: sales,
-      vips: vips.reverse(),
+      auctions,
+      saldo,
+      vips,
+      streamLink,
+      slidoView,
+      stretchGoal
     })
   );
 }
