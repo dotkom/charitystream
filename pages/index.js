@@ -23,13 +23,13 @@ export default function Index() {
         <div className={styles.chat + " " + styles.pane}>
           <Chat slidoView={data.slidoView} />
         </div>
-        <div className={styles.beer + " " + styles.pane}>
+        <div className={styles.vipps + " " + styles.pane}>
           <Vips items={data.vips} />
         </div>
         <div className={styles.stretch + " " + styles.pane}>
           <StretchGoals />
         </div>
-        <div className={styles.vipps + " " + styles.pane}>
+        <div className={styles.auction + " " + styles.pane}>
           <SilentAuction items={data.auctions} />
         </div>
       </div>

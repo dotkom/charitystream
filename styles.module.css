@@ -19,6 +19,10 @@
   grid-area: vipps;
 }
 
+.auction {
+  grid-area: auction;
+}
+
 .pane {
   border: 1px dotted black;
 }
@@ -26,8 +30,9 @@
 .parent {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: 800px 400px;
+  grid-template-rows: 2fr 1fr 1fr;
   grid-template-areas: 
-    "stream chat beer"
-    "stretchGoals stretchGoals vipps"
+    "stream chat vipps"
+    "stretchGoals stretchGoals stretchGoals"
+    "auction auction auction"
 }
