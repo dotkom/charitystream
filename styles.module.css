@@ -1,0 +1,33 @@
+.stream {
+  border: 5px solid black;
+  grid-area: stream;
+}
+
+.chat {
+  border: 5px solid black;
+  grid-area: chat;
+}
+
+.beer {
+  border: 5px solid black;
+  grid-area: beer;
+}
+
+.stretch {
+  border: 5px solid black;
+  grid-area: stretchGoals;
+}
+
+.vipps {
+  border: 5px solid black;
+  grid-area: vipps;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
+  grid-template-areas: 
+    "stream chat beer"
+    "stretchGoals stretchGoals vipps"
+}
