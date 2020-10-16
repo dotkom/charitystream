@@ -29,7 +29,7 @@ const VippsSchema = new mongoose.Schema(
     name: { type: String, default: "" },
     amount: { type: Number, default: 0 },
   },
-  { autoCreate: true }
+  { autoCreate: true, timestamps: true }
 );
 export const Vipps = mongoose.model("Vipps", VippsSchema);
 
