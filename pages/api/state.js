@@ -27,7 +27,7 @@ export default async function handler(_, res) {
   const streamLink = await StreamLink.findOne().sort({ date: -1 }).limit(1);
   const slidoView = await SlidoView.findOne().sort({ date: -1 }).limit(1);
   const stretchGoals = await StretchGoal.find({}).sort("goal");
-  const topDoner = await Vipps.find({}).sort('amount').limit(1);
+  const topDoner = await Vipps.findOne({}).sort({amount:-1}).limit(1);
 
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
