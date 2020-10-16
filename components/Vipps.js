@@ -24,7 +24,7 @@ const Vipp = (props) => {
 };
 
 const Vipps = (props) => {
-  const vipps = props.items.map((item) => (
+  const vipps = props.items.slice(0, 6).map((item) => (
     <Vipp name={item.name} amount={item.amount} />
   ));
 

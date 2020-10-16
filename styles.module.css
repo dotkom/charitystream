@@ -29,10 +29,10 @@
 
 .parent {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 3fr 2fr 1fr;
   grid-template-rows: 2fr 1fr 1fr;
-  grid-template-areas: 
+  grid-template-areas:
     "stream chat vipps"
     "stretchGoals stretchGoals stretchGoals"
-    "auction auction auction"
+    "auction auction auction";
 }
