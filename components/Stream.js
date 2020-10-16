@@ -1,4 +1,5 @@
 import YouTube from "react-youtube";
+import styles from "./Stream.module.css";
 
 const Stream = ({ streamId }) => {
   const videoOpts = {
@@ -7,8 +8,13 @@ const Stream = ({ streamId }) => {
     },
   };
   return (
-    <div>
-      <YouTube videoId={streamId} opts={videoOpts} />
+    <div className={styles.youtubeWrapper}>
+      <YouTube
+        containerClassName={styles.youtube}
+        videoId={streamId}
+        opts={videoOpts}
+        className={styles.youtubeActual}
+      />
       {/*     <iframe
             width="800"
             height="500"
