@@ -1,24 +1,27 @@
-const Chat = () => (
-  <div>
-    {/*
-        <div style={{ width: "100%" }}>
-          <iframe
-            src="https://www.youtube.com/live_chat?v=DdM2dUG7Iiw&embed_domain=localhost"
-            width="100%"
-            height="600"
-            frameBorder="0"
-          ></iframe>
-        </div>*/}
-    <div style={{ width: "100%" }}>
-      <iframe
-        src="https://app.sli.do/event/xf2tgxre"
-        height="100%"
-        width="100%"
-        frameborder="0"
-        style={{ "min-height": "560px" }}
-      ></iframe>
+const Chat = ({ slidoView }) => {
+  const questions = slidoView == "questions";
+  return (
+    <div>
+      <div style={{ width: "100%", display: questions ? "block" : "none" }}>
+        <iframe
+          src={`https://app.sli.do/event/xf2tgxre/live/questions`}
+          height="100%"
+          width="100%"
+          frameborder="0"
+          style={{ "min-height": "560px", marginTop: "-100px" }}
+        ></iframe>
+      </div>
+      <div style={{ width: "100%", display: questions ? "none" : "block" }}>
+        <iframe
+          src={`https://app.sli.do/event/xf2tgxre/live/polls`}
+          height="100%"
+          width="100%"
+          frameborder="0"
+          style={{ "min-height": "600px", marginTop: "-100px" }}
+        ></iframe>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Chat;
