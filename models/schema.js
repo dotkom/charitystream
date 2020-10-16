@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 delete mongoose.connection.models["Auction"];
 delete mongoose.connection.models["Saldo"];
-delete mongoose.connection.models["Vips"];
+delete mongoose.connection.models["Vipps"];
 delete mongoose.connection.models["StreamLink"];
 delete mongoose.connection.models["SlidoView"];
 delete mongoose.connection.models["StretchGoal"];
@@ -24,14 +24,14 @@ const SaldoSchema = new mongoose.Schema(
 );
 export const Saldo = mongoose.model("Saldo", SaldoSchema);
 
-const VipsSchema = new mongoose.Schema(
+const VippsSchema = new mongoose.Schema(
   {
     name: { type: String, default: "" },
     amount: { type: Number, default: 0 },
   },
   { autoCreate: true }
 );
-export const Vips = mongoose.model("Vips", VipsSchema);
+export const Vipps = mongoose.model("Vipps", VippsSchema);
 
 const StreamLinkSchema = new mongoose.Schema(
   {

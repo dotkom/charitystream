@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 import {
   Auction,
-  Vips,
+  Vipps,
   StreamLink,
   SlidoView,
   StretchGoal,
@@ -22,7 +22,7 @@ export default async function handler(_, res) {
   });
 
   const auctions = await Auction.find({});
-  const vips = await Vips.find({});
+  const vipps = await Vipps.find({});
   const streamLink = await StreamLink.findOne().sort({ date: -1 }).limit(1);
   const slidoView = await SlidoView.findOne().sort({ date: -1 }).limit(1);
   const stretchGoals = await StretchGoal.find({}).sort('goal');
@@ -30,7 +30,7 @@ export default async function handler(_, res) {
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
 
-  const saldo = vips.reduce((a,b) => {
+  const saldo = vipps.reduce((a,b) => {
     return a + b.amount
   }, 0)
 
@@ -38,7 +38,7 @@ export default async function handler(_, res) {
     JSON.stringify({
       auctions,
       saldo: saldo,
-      vips: vips.reverse(),
+      vipps: vipps.reverse(),
       streamLink,
       slidoView,
       stretchGoals,
