@@ -18,12 +18,9 @@ export default function Index() {
     <div className={styles.parent + " h-screen"}>
       <div className={styles.stream + " " + styles.pane + ' text-lg'}><p className='text-center'>Hehe</p></div>
       <div className={styles.chat + " " + styles.pane}>Chat</div>
-      <div className={styles.beer + " " + styles.pane}>Beer</div>
-      <div className={styles.stretch + " " + styles.pane}><StretchGoals/></div>
-      <div className={styles.vipps + " " + styles.pane}><Vips items={data.vips} /></div>
-    </div>
-    <div className={styles.auction}>
-      <SilentAuction items={data.auctions} />
+      <div className={styles.beer + " " + styles.pane}><Vips items={data.vips} /></div>
+      <div className={styles.stretch + " " + styles.pane}><StretchGoals /></div>
+      <div className={styles.vipps + " " + styles.pane}><SilentAuction items={data.auctions} /></div>
     </div>
     </>
   );
