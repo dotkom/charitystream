@@ -27,7 +27,7 @@ export default async function handler(_, res) {
   const vips = await Vips.find({});
   const streamLink = await StreamLink.findOne().sort({ date: -1 }).limit(1);
   const slidoView = await SlidoView.findOne().sort({ date: -1 }).limit(1);
-  const stretchGoal = await StretchGoal.find({});
+  const stretchGoals = await StretchGoal.find({}).sort('goal');
 
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
@@ -36,10 +36,10 @@ export default async function handler(_, res) {
     JSON.stringify({
       auctions,
       saldo,
-      vips,
+      vips: vips.reverse();
       streamLink,
       slidoView,
-      stretchGoal,
+      stretchGoals,
     })
   );
 }
