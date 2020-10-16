@@ -1,7 +1,10 @@
+import animations from '../styles/animations.module.css'
+
 const Vipp = (props) => {
+  console.log(animations.wiggle)
   return (
     <div
-      class="flex items-center overflow-hidden m-3 rounded-tl-lg rounded-tr-lg rounded-br-lg"
+      className={`flex items-center overflow-hidden m-3 rounded-tl-lg rounded-tr-lg rounded-br-lg ${animations.wiggle}`}
       style={{ background: "#ff5b24" }}
     >
       <img

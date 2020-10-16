@@ -12,8 +12,8 @@ export default function StretchGoals(props)  {
         <div className="flex flex-row w-full items-center">
           <div className="w-3/4 m-1 overflow-hidden h-10 mb-4 text-xs flex rounded-3xl bg-green-200 relative">
             <div
-              style={{ width: `${meterLen}%` }}
-              className="shadow-none bg-green-500 rounded text-center text-xl flex items-center justify-center"
+              style={{ width: `${meterLen}%`, transition: "width 2s" }}
+              className="shadow-none bg-green-500"
             >
             </div>
             <p className="absolute w-full flex justify-center items-center text-xl text-black h-full">{`${saldo}kr av ${maxSaldo}kr`}</p>
