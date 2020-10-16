@@ -1,6 +1,5 @@
 .stream {
   grid-area: stream;
-  height: 200px;
 }
 
 .chat {
@@ -26,7 +25,7 @@
 .parent {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: 800px 400px;
+  grid-template-rows: 2fr 1fr;
   grid-template-areas: 
     "stream chat beer"
     "stretchGoals stretchGoals vipps"
