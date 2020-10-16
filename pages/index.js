@@ -9,7 +9,7 @@ import Chat from "../components/Chat";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Index() {
-  const { data, error } = useSWR("/api/state", fetcher);
+  const { data, error } = useSWR("/api/state", fetcher, { refreshInterval: 5000 });
 
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
@@ -18,10 +18,10 @@ export default function Index() {
     <>
       <div className={styles.parent + " h-screen"}>
         <div className={styles.stream + " " + styles.pane + " text-lg"}>
-          <Stream streamId={data.streamLink} />
+          <Stream streamId={data.streamLink.link} />
         </div>
         <div className={styles.chat + " " + styles.pane}>
-          <Chat slidoView={data.slidoView} />
+          <Chat slidoView={data.slidoView.type} />
         </div>
         <div className={styles.vipps + " " + styles.pane}>
           <Vips items={data.vips} />

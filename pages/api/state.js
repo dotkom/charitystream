@@ -25,8 +25,8 @@ export default async function handler(_, res) {
   const auctions = await Auction.find({});
   const saldo = await Saldo.find({});
   const vips = await Vips.find({});
-  const streamLink = await StreamLink.find({});
-  const slidoView = await SlidoView.find({});
+  const streamLink = await StreamLink.findOne().sort({ date: -1 }).limit(1);
+  const slidoView = await SlidoView.findOne().sort({ date: -1 }).limit(1);
   const stretchGoal = await StretchGoal.find({});
 
   res.statusCode = 200;
