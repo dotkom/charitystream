@@ -117,9 +117,10 @@ const AuctionItems = (props) => {
                     type="text"
                     placeholder="Ola Nordmann"
                     value={name || ""}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
+                    onChange={(e) => {
+                      setFormData({ ...formData, name: e.target.value });
+                      setName(e.target.value);
+                    }}
                   />
                 </div>
                 <div class="mb-6">
@@ -135,9 +136,10 @@ const AuctionItems = (props) => {
                     type="email"
                     value={email || ""}
                     placeholder="ola@nordmann.no"
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
+                    onChange={(e) => {
+                      setFormData({ ...formData, email: e.target.value });
+                      setName(e.target.value);
+                    }}
                   />
                 </div>
                 <div class="mb-6">
@@ -173,24 +175,28 @@ const AuctionItems = (props) => {
                   </button>
                 </div>
               </form>
-            ) : success ? (
-              <div class="w-full max-w-xs bg-gray-800 rounded">
-                {success}
-                <button
-                  class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                  type="button"
-                  onClick={closeModal}
-                ></button>
-              </div>
             ) : (
-              <div class="w-full max-w-xs bg-gray-800 rounded">
-                Noe gikk galt.
-                {success}
-                <button
-                  class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                  type="button"
-                  onClick={closeModal}
-                ></button>
+              <div class="bg-gray-600 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                {success ? (
+                  <div class="w-full max-w-xs bg-gray-800 rounded">
+                    {success}
+                    <button
+                      class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                      type="button"
+                      onClick={closeModal}
+                    ></button>
+                  </div>
+                ) : (
+                  <div class="w-full max-w-xs bg-gray-800 rounded">
+                    Noe gikk galt.
+                    {success}
+                    <button
+                      class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                      type="button"
+                      onClick={closeModal}
+                    ></button>
+                  </div>
+                )}
               </div>
             )}
           </div>
