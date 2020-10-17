@@ -20,11 +20,13 @@ export default function Index() {
     <>
       <div className={"flex h-screen flex-wrap justify-evenly"}>
         <div className={"text-lg"}>
+          {/*
           <img
             src="https://i.imgur.com/PUjDuS9.png"
             width="120px"
             style={{ position: "absolute" }}
           />
+          */}
           <Stream streamId={data.streamLink.link} />
         </div>
         <div className="flex max-w-full flex-grow justify-center flex-wrap">
