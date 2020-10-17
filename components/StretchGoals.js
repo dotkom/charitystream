@@ -8,16 +8,12 @@ export default function StretchGoals(props) {
 
   const nextGoals = stretchGoals
     .filter((stretchGoal) => stretchGoal.goal > totalAmount)
-    .slice(1, 4)
     .reverse();
-  const goalItems = nextGoals.map((stretchGoal, index) => (
-    <div
-      key={index}
-    >{`${stretchGoal.description} på ${stretchGoal.goal}kr`}</div>
-  ));
-
+  const reachedGoals = stretchGoals
+    .filter((goal) => goal.goal < totalAmount)
+    .reverse();
   return (
-    <div className="p-2 h-full flex flex-wrap overflow-hidden items-center justify-evenly">
+    <div className="flex flex-wrap items-center h-full p-2 overflow-hidden justify-evenly">
       <div
         style={{ minHeight: "150px", minWidth: "300px", maxWidth: "75%" }}
         className="flex flex-col justify-center flex-grow"
@@ -25,15 +21,15 @@ export default function StretchGoals(props) {
         <div className="italic text-center">
           <p className="text-3xl font-medium w-">Totalt innsamlet</p>
         </div>
-        <div className="flex flex-col w-full items-center justify-center">
-          <div className="w-full m-1 overflow-hidden h-10 text-xs flex rounded-3xl bg-green-200 relative">
+        <div className="flex flex-col items-center justify-center w-full">
+          <div className="relative flex w-full h-10 m-1 overflow-hidden text-xs bg-green-200 rounded-3xl">
             <div
               style={{ width: `${meterLen}%`, transition: "width 2s" }}
-              className="shadow-none bg-green-500"
+              className="bg-green-500 shadow-none"
             ></div>
-            <p className="absolute w-full flex justify-center items-center text-xl text-black h-full">{`${totalAmount}kr av ${maxAmount}kr`}</p>
+            <p className="absolute flex items-center justify-center w-full h-full text-xl text-black">{`${totalAmount}kr av ${maxAmount}kr`}</p>
           </div>
-          <div className="text-center flex flex justify-evenly text-xl">
+          <div className="flex text-xl font-semibold text-center justify-evenly">
             <p>
               Neste stretch goal:{" "}
               {nextGoal
@@ -44,11 +40,34 @@ export default function StretchGoals(props) {
         </div>
       </div>
       <div className="text-center">
-        <div className="text-2xl">Kommende mål:</div>
+        <div className="text-2xl">Mål:</div>
         <hr />
-        <div className="flex flex-col justify-evenly items-center">
-          {goalItems}
-        </div>
+        <table class="table-auto">
+          <tbody>
+            {nextGoals.map((item, i) => {
+              const color =
+                i == nextGoals.length - 1
+                  ? "text-indigo-400 animate-pulse"
+                  : "";
+              return (
+                <tr key={item.description}>
+                  <td class={`px-4 text-left text-lg ${color}`}>
+                    {item.description}
+                  </td>
+                  <td class={`px-4 ${color}`}>{item.goal} ,-</td>
+                </tr>
+              );
+            })}
+            {reachedGoals.map((item) => (
+              <tr key={item.description}>
+                <td class="px-4 line-through text-green-400 text-left text-lg">
+                  {item.description}
+                </td>
+                <td class="px-4 text-green-400 line-through">{item.goal} ,-</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
