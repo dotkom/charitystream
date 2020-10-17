@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "cors": "^2.8.5",
     "mongoose": "^5.10.9",
     "next": "latest",
     "postcss-preset-env": "^6.7.0",
