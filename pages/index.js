@@ -18,21 +18,21 @@ export default function Index() {
 
   return (
     <>
-      <div className={styles.parent + " h-screen"}>
-        <div className={styles.stream + " " + styles.pane + " text-lg"}>
+      <div className={"flex h-screen flex-wrap"}>
+        <div className={"text-lg"}>
           <img src="https://i.imgur.com/PUjDuS9.png" width="120px" style={{position: "absolute"}}/>
           <Stream streamId={data.streamLink.link} />
         </div>
-        <div className={styles.chat + " " + styles.pane}>
+        <div className={"flex-grow"}>
           <Chat slidoView={data.slidoView.type} />
         </div>
-        <div className={styles.vipps + " " + styles.pane}>
+        <div className={"flex-grow max-w-lg"}>
           <Vipps items={data.vipps} topDonor={data.topDonor} />
         </div>
-        <div className={styles.stretch + " " + styles.pane}>
+        <div className={"w-screen"}>
           <StretchGoals stretchGoals={data.stretchGoals} totalAmount={data.totalAmount} />
         </div>
-        <div className={styles.auction + " " + styles.pane}>
+        <div className={"w-screen"}>
           <SilentAuction items={data.auctions} />
         </div>
       </div>

@@ -5,19 +5,19 @@ const Chat = ({ slidoView }) => {
       <div style={{ width: "100%", display: questions ? "block" : "none" }}>
         <iframe
           src={`https://app.sli.do/event/xf2tgxre/live/questions`}
-          height="100%"
+          height="600px"
           width="100%"
           frameBorder="0"
-          style={{ minHeight: "700px" }}
+          style={{ minHeight: "600px", minWidth: "300px"}}
         ></iframe>
       </div>
       <div style={{ width: "100%", display: questions ? "none" : "block" }}>
         <iframe
           src={`https://app.sli.do/event/xf2tgxre/live/polls`}
-          height="100%"
+          height="600px"
           width="100%"
           frameBorder="0"
-          style={{ minHeight: "700px", marginTop: "-100px" }}
+          style={{ minHeight: "600px", minWidth: "300px"}}
         ></iframe>
       </div>
     </div>
