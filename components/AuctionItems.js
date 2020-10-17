@@ -138,7 +138,7 @@ const AuctionItems = (props) => {
                     placeholder="ola@nordmann.no"
                     onChange={(e) => {
                       setFormData({ ...formData, email: e.target.value });
-                      setName(e.target.value);
+                      setEmail(e.target.value);
                     }}
                   />
                 </div>
