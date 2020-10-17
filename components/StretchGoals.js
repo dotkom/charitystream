@@ -8,8 +8,8 @@ export default function StretchGoals(props) {
 
   const nextGoals = stretchGoals
     .filter((stretchGoal) => stretchGoal.goal > totalAmount)
-    .slice(1, 4);
-  console.log(nextGoals);
+    .slice(1, 4)
+    .reverse();
   const goalItems = nextGoals.map((stretchGoal, index) => (
     <div
       key={index}
@@ -17,16 +17,16 @@ export default function StretchGoals(props) {
   ));
 
   return (
-    <div className="p-2 h-full flex">
-      <div className="absolute italic flex justify-center w-3/4 ">
-        <p className="text-3xl font-medium w-">Totalt innsamlet</p>
-      </div>
+    <div className="p-2 h-full flex flex-wrap overflow-hidden items-center justify-evenly">
       <div
-        style={{ minHeight: "150px" }}
-        className="flex justify-center h-full w-3/4"
+        style={{ minHeight: "150px", minWidth: "300px", maxWidth: "75%" }}
+        className="flex flex-col justify-center flex-grow"
       >
+        <div className="italic text-center">
+          <p className="text-3xl font-medium w-">Totalt innsamlet</p>
+        </div>
         <div className="flex flex-col w-full items-center justify-center">
-          <div className="w-3/4 m-1 overflow-hidden h-10 text-xs flex rounded-3xl bg-green-200 relative">
+          <div className="w-full m-1 overflow-hidden h-10 text-xs flex rounded-3xl bg-green-200 relative">
             <div
               style={{ width: `${meterLen}%`, transition: "width 2s" }}
               className="shadow-none bg-green-500"
@@ -43,7 +43,7 @@ export default function StretchGoals(props) {
           </div>
         </div>
       </div>
-      <div className="text-center w-1/4 ">
+      <div className="text-center">
         <div className="text-2xl">Kommende mål:</div>
         <div className="flex flex-col justify-evenly items-center">
           {goalItems}
