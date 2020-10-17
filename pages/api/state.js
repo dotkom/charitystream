@@ -33,8 +33,6 @@ export default async function handler(_, res) {
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json")
 
-  console.log(auctions)
-
   // Find totalAmount using the sum all vipps
   const totalAmount = vipps.reduce((a, b) => {
     return a + b.amount;

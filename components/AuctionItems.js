@@ -33,7 +33,6 @@ const AuctionItems = (props) => {
 
   const bid = async (e) => {
     e.preventDefault();
-    console.log(formData);
     setName(formData.name);
     setEmail(formData.email);
     const res = await fetch("/api/bid", {
