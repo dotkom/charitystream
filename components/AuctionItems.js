@@ -1,10 +1,9 @@
 const Item = (props) => {
   return (
-    <div className="w-40 rounded overflow-hidden shadow-lg bg-gray-800 m-2 text-center">
-      <div className="px-3 py-2">
-        <div className="font-bold text-xl mb-2">{props.price},-</div>
-        <p className="text-white">{props.description}</p>
-      </div>
+    <div className="w-40 rounded overflow-hidden shadow-lg m-2 text-center px-3 py-2" style={{background: "#444"}}>
+      <div className="font-bold text-xl mb-2">{props.price},-</div>
+      <hr/>
+      <p className="text-white text-base mb-8">{props.description}</p>
     </div>
   );
 };

@@ -5,7 +5,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function AuctionItemsPage() {
   const { data, error } = useSWR("/api/state", fetcher, {
-    refreshInterval: 2500,
+    refreshInterval: 5000,
   });
 
   if (error) return <div>Failed to load</div>;
@@ -13,5 +13,9 @@ export default function AuctionItemsPage() {
 
   console.log(data);
 
-  return <AuctionItems items={data.auctions} />;
+  return  (
+    <div>
+      <AuctionItems items={data.auctions} />;
+    </div>
+  )
 }

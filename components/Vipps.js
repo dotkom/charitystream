@@ -8,7 +8,7 @@ const Vipp = (props) => {
       style={{ background: "#ff5b24" }}
     >
       <img
-        src="https://lh3.googleusercontent.com/0PbbTOfd4p_kT2iumjByeiQoj4AkK5aHFFeAe61BeW9saYtpY0z4S0CPBjJUN188fpg"
+        src="https://i.imgur.com/RVgB3E6.png"
         width="50px"
       />
       <span className="flex justify-between w-full">
@@ -26,10 +26,10 @@ const TopVipp = ({ vipp }) => {
       {vipp && (
         <div
           className={`flex items-center overflow-hidden m-3 rounded-tl-lg rounded-tr-lg rounded-br-lg shadow-md ${animations.wiggle}`}
-          style={{ background: "#39AC37", border: "3px solid red" }}
+          style={{ background: "#39AC37" }}
         >
           <img
-            src="https://lh3.googleusercontent.com/0PbbTOfd4p_kT2iumjByeiQoj4AkK5aHFFeAe61BeW9saYtpY0z4S0CPBjJUN188fpg"
+            src="https://i.imgur.com/RVgB3E6.png"
             width="50px"
           />
           <span class="flex justify-between w-full">

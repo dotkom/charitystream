@@ -1,5 +1,4 @@
 import useSWR from "swr";
-import dynamic from "next/dynamic";
 import StretchGoals from "../components/StretchGoals";
 import SilentAuction from "../components/SilentAuction";
 import Vipps from "../components/Vipps";
@@ -32,7 +31,7 @@ export default function Index() {
           <Vipps items={data.vipps} topDonor={data.topDonor} />
         </div>
         <div className={styles.stretch + " " + styles.pane}>
-          <StretchGoals stretchGoals={data.stretchGoals} saldo={data.saldo} />
+          <StretchGoals stretchGoals={data.stretchGoals} totalAmount={data.totalAmount} />
         </div>
         <div className={styles.auction + " " + styles.pane}>
           <SilentAuction items={data.auctions} />

@@ -3,9 +3,9 @@ import styles from "./SilentAuction.module.css";
 const Item = (props) => {
   return (
     <div className="w-40 rounded overflow-hidden shadow-lg m-2 text-center px-3 py-2" style={{background: "#444"}}>
-      <div className="font-bold text-xl mb-2">{props.price},-</div>
+      <div className="font-bold text-2xl mb-2">{props.price},-</div>
       <hr/>
-      <p className="text-white text-base">{props.description}</p>
+      <p className="text-white text-base mt-4 mb-4">{props.description}</p>
     </div>
   );
 };

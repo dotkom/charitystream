@@ -22,6 +22,7 @@ export default async function handler(_, res) {
     useCreateIndex: true,
   });
 
+  // Get all the state we need for the page
   const auctions = await Auction.find({});
   const vipps = await Vipps.find({});
   const streamLink = await StreamLink.findOne().sort({ date: -1 }).limit(1);
@@ -32,14 +33,15 @@ export default async function handler(_, res) {
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
 
-  const saldo = vipps.reduce((a, b) => {
+  // Find totalAmount using the sum all vipps
+  const totalAmount = vipps.reduce((a, b) => {
     return a + b.amount;
   }, 0);
 
   res.end(
     JSON.stringify({
       auctions,
-      saldo,
+      totalAmount,
       vipps,
       streamLink,
       slidoView,

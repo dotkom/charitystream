@@ -1,8 +1,10 @@
 export default function StretchGoals(props) {
-  const { stretchGoals, saldo } = props;
-  const maxSaldo = stretchGoals[stretchGoals.length - 1].goal;
-  const meterLen = Math.floor((saldo / maxSaldo) * 100);
-  const nextGoal = stretchGoals.find((stretchGoal) => stretchGoal.goal > saldo);
+
+  const { stretchGoals, totalAmount } = props;
+  const maxAmount = stretchGoals[stretchGoals.length - 1].goal;
+  const meterLen = Math.floor((totalAmount / maxAmount) * 100);
+  const nextGoal = stretchGoals.find((stretchGoal) => stretchGoal.goal > totalAmount);
+
   return (
     <div className="p-2">
       <div className="absolute italic flex justify-center w-3/4 ">
@@ -18,7 +20,7 @@ export default function StretchGoals(props) {
               style={{ width: `${meterLen}%`, transition: "width 2s" }}
               className="shadow-none bg-green-500"
             ></div>
-            <p className="absolute w-full flex justify-center items-center text-xl text-black h-full">{`${saldo}kr av ${maxSaldo}kr`}</p>
+            <p className="absolute w-full flex justify-center items-center text-xl text-black h-full">{`${totalAmount}kr av ${maxAmount}kr`}</p>
           </div>
           <div className="text-center w-1/4 flex flex-col justify-evenly text-xl">
             <p>Neste stretch goal:</p>
