@@ -35,6 +35,13 @@ const AuctionItems = (props) => {
     e.preventDefault();
     setName(formData.name);
     setEmail(formData.email);
+    if (formData.amount < activeItem.price) {
+      setSuccess(
+        `Budet ditt kan ikke være mindre enn ${activeItem.price},- kr!`
+      );
+      setActiveItem(null);
+      return;
+    }
     const res = await fetch("/api/bid", {
       method: "POST",
       headers: {
