@@ -6,7 +6,7 @@ Modal.setAppElement("#__next");
 const Item = (props) => {
   return (
     <div
-      className="w-40 rounded overflow-hidden shadow-lg m-5 text-center px-3 py-2 cursor-pointer hover:bg-gray-600 bg-gray-800"
+      className="w-48 rounded overflow-hidden shadow-lg m-5 text-center px-3 py-2 cursor-pointer hover:bg-gray-600 bg-gray-800"
       onClick={props.onClick}
     >
       <div className="font-bold text-xl mb-2">{props.price},-</div>
@@ -76,7 +76,11 @@ const AuctionItems = (props) => {
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
       background: "none",
+      border: "none"
     },
+    overlay: {
+      backgroundColor: "rgba(100,100,100, 0.5)"
+    }
   };
 
   return (
