@@ -1,28 +1,21 @@
 import mongoose from "mongoose";
 
 delete mongoose.connection.models["Auction"];
-delete mongoose.connection.models["Saldo"];
 delete mongoose.connection.models["Vipps"];
 delete mongoose.connection.models["StreamLink"];
 delete mongoose.connection.models["SlidoView"];
 delete mongoose.connection.models["StretchGoal"];
+delete mongoose.connection.models["Bid"];
 
 const AuctionSchema = new mongoose.Schema(
   {
+    id: {type: Number},
     description: { type: String, default: "NULL" },
     price: { type: Number, default: 0 },
   },
   { autoCreate: true }
 );
 export const Auction = mongoose.model("Auction", AuctionSchema);
-
-const SaldoSchema = new mongoose.Schema(
-  {
-    current: { type: Number, default: 0 },
-  },
-  { autoCreate: true }
-);
-export const Saldo = mongoose.model("Saldo", SaldoSchema);
 
 const VippsSchema = new mongoose.Schema(
   {
@@ -57,3 +50,14 @@ const StretchGoalSchema = new mongoose.Schema(
   { autoCreate: true }
 );
 export const StretchGoal = mongoose.model("StretchGoal", StretchGoalSchema);
+
+const BidSchema = new mongoose.Schema(
+  {
+    name: { type: String, default: "" },
+    email: { type: String, default: "" },
+    item: { type: Number, default: "" },
+    amount: { type: Number, default: 0 },
+  },
+  { autoCreate: true, timestamps: true }
+);
+export const Bid = mongoose.model("Bid", BidSchema);
