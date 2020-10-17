@@ -7,8 +7,8 @@ const Chat = ({ slidoView }) => {
           src={`https://app.sli.do/event/xf2tgxre/live/questions`}
           height="100%"
           width="100%"
-          frameborder="0"
-          style={{ "min-height": "700px", marginTop: "-100px" }}
+          frameBorder="0"
+          style={{ minHeight: "700px", marginTop: "-100px" }}
         ></iframe>
       </div>
       <div style={{ width: "100%", display: questions ? "none" : "block" }}>
@@ -16,8 +16,8 @@ const Chat = ({ slidoView }) => {
           src={`https://app.sli.do/event/xf2tgxre/live/polls`}
           height="100%"
           width="100%"
-          frameborder="0"
-          style={{ "min-height": "700px", marginTop: "-100px" }}
+          frameBorder="0"
+          style={{ minHeight: "700px", marginTop: "-100px" }}
         ></iframe>
       </div>
     </div>

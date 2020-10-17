@@ -12,8 +12,8 @@ const Item = (props) => {
 };
 
 const SilentAuction = (props) => {
-  const items = props.items.map((item) => (
-    <Item description={item.description} price={item.price} />
+  const items = props.items.map((item, index) => (
+    <Item key={index} description={item.description} price={item.price} />
   ));
 
   return (
