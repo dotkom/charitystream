@@ -4,7 +4,7 @@ const Vipp = (props) => {
   console.log(animations.wiggle);
   return (
     <div
-      className={`flex items-center overflow-hidden m-3 rounded-tl-lg rounded-tr-lg rounded-br-lg ${animations.wiggle}`}
+      className={`flex items-center overflow-hidden m-3 rounded-tl-lg rounded-tr-lg rounded-br-lg shadow-md ${animations.wiggle}`}
       style={{ background: "#ff5b24" }}
     >
       <img
@@ -22,8 +22,22 @@ const Vipp = (props) => {
 const TopVipp = ({ vipp }) => {
   return (
     <div>
-      <h5>Største donasjon:</h5>
-      <Vipp name={vipp.name} amount={item.amount} />
+      <div className="font-bold m-1 text-xl mb-2">Største donasjon:</div>
+      {vipp && (
+        <div
+          className={`flex items-center overflow-hidden m-3 rounded-tl-lg rounded-tr-lg rounded-br-lg shadow-md ${animations.wiggle}`}
+          style={{ background: "#39AC37", border: "3px solid red" }}
+        >
+          <img
+            src="https://lh3.googleusercontent.com/0PbbTOfd4p_kT2iumjByeiQoj4AkK5aHFFeAe61BeW9saYtpY0z4S0CPBjJUN188fpg"
+            width="50px"
+          />
+          <span class="flex justify-between w-full">
+            <span class="p-2">{vipp.name} donerte</span>
+            <span class="p-2 font-bold">{vipp.amount}kr!!</span>
+          </span>
+        </div>
+      )}
     </div>
   );
 };
@@ -36,6 +50,7 @@ const Vipps = (props) => {
   return (
     <div class="flex flex-col">
       <TopVipp vipp={props.topDonor} />
+      <hr />
       {vipps}
     </div>
   );
