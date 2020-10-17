@@ -55,6 +55,7 @@ const BidSchema = new mongoose.Schema(
   {
     name: { type: String, default: "" },
     email: { type: String, default: "" },
+    description: { type: String, default: "" },
     item: { type: Number, default: "" },
     amount: { type: Number, default: 0 },
   },
