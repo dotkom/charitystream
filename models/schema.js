@@ -9,7 +9,7 @@ delete mongoose.connection.models["Bid"];
 
 const AuctionSchema = new mongoose.Schema(
   {
-    id: {type: Number},
+    id: { type: Number },
     description: { type: String, default: "NULL" },
     price: { type: Number, default: 0 },
   },

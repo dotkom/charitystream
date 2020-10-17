@@ -45,7 +45,7 @@ export default function StretchGoals(props) {
       </div>
       <div className="text-center">
         <div className="text-2xl">Kommende mål:</div>
-        <hr/>
+        <hr />
         <div className="flex flex-col justify-evenly items-center">
           {goalItems}
         </div>

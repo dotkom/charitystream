@@ -31,7 +31,7 @@ export default async function handler(_, res) {
   const topDonor = await Vipps.findOne({}).sort({ amount: -1 }).limit(1);
 
   res.statusCode = 200;
-  res.setHeader("Content-Type", "application/json")
+  res.setHeader("Content-Type", "application/json");
 
   // Find totalAmount using the sum all vipps
   const totalAmount = vipps.reduce((a, b) => {
