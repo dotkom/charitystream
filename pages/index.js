@@ -11,7 +11,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Index() {
   const { data, error } = useSWR("/api/state", fetcher, {
-    refreshInterval: 2500,
+    refreshInterval: 5000,
   });
 
   if (error) return <div>Failed to load</div>;
