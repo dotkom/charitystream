@@ -18,10 +18,6 @@
   grid-area: vipps;
 }
 
-.pane {
-  border: 1px dotted black;
-}
-
 .parent {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;

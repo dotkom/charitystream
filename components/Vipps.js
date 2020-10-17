@@ -1,7 +1,6 @@
 import animations from "../styles/animations.module.css";
 
 const Vipp = (props) => {
-  console.log(animations.wiggle);
   return (
     <div
       className={`flex items-center overflow-hidden m-3 rounded-tl-lg rounded-tr-lg rounded-br-lg shadow-md ${animations.wiggle}`}
@@ -12,8 +11,8 @@ const Vipp = (props) => {
         width="50px"
       />
       <span className="flex justify-between w-full">
-        <span className="p-2">{props.name} donerte</span>
-        <span className="p-2 font-bold">{props.amount}kr!!</span>
+        <span className="p-3">{props.name} donerte</span>
+        <span className="p-3 font-bold">{props.amount}kr!!</span>
       </span>
     </div>
   );
@@ -33,8 +32,8 @@ const TopVipp = ({ vipp }) => {
             width="50px"
           />
           <span class="flex justify-between w-full">
-            <span class="p-2">{vipp.name} donerte</span>
-            <span class="p-2 font-bold">{vipp.amount}kr!!</span>
+            <span class="p-3">{vipp.name} donerte</span>
+            <span class="p-3 font-bold">{vipp.amount}kr!!</span>
           </span>
         </div>
       )}
@@ -44,7 +43,6 @@ const TopVipp = ({ vipp }) => {
 
 const Vipps = (props) => {
   const vipps = props.items
-    .slice(0, 6)
     .map((item) => <Vipp name={item.name} amount={item.amount} />);
 
   return (

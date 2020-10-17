@@ -8,7 +8,7 @@ const Chat = ({ slidoView }) => {
           height="100%"
           width="100%"
           frameBorder="0"
-          style={{ minHeight: "700px", marginTop: "-100px" }}
+          style={{ minHeight: "700px" }}
         ></iframe>
       </div>
       <div style={{ width: "100%", display: questions ? "none" : "block" }}>

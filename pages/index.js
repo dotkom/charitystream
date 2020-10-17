@@ -16,12 +16,11 @@ export default function Index() {
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
 
-  console.log(data);
-
   return (
     <>
       <div className={styles.parent + " h-screen"}>
         <div className={styles.stream + " " + styles.pane + " text-lg"}>
+          <img src="https://i.imgur.com/PUjDuS9.png" width="120px" style={{position: "absolute"}}/>
           <Stream streamId={data.streamLink.link} />
         </div>
         <div className={styles.chat + " " + styles.pane}>
