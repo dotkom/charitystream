@@ -17,22 +17,27 @@ export default function Index() {
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
 
+  let video_id = "-t1NbLvPKkE";
+
   return (
     <>
       <div className={"flex h-screen flex-wrap justify-evenly"}>
+
         <div className={"w-screen"}>
           <ProgressBar
             stretchGoals={data.stretchGoals}
             totalAmount={data.totalAmount}
           />
+
         </div>
         <div className={"text-lg"}>
-          <Stream streamId={null} />
+          <Stream video_id={video_id} />
         </div>
         
         <div className="flex max-w-full flex-grow justify-center flex-wrap">
           <div className={"flex-grow max-w-lg"}>
-            <Chat slidoView={null} />
+            <Chat video_id={video_id} />
+
           </div>
           <div className={"flex-grow max-w-lg"}>
             <Vipps items={data.vipps} topDonor={data.topDonor} />

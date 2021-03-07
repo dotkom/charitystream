@@ -1,7 +1,7 @@
 import YouTube from "react-youtube";
 import styles from "./Stream.module.css";
 
-const Stream = ({ streamId }) => {
+const Stream = ({ video_id }) => {
   const videoOpts = {
     playerVars: {
       autoplay: 1,
@@ -12,7 +12,7 @@ const Stream = ({ streamId }) => {
     <div className={styles.youtubeWrapper}>
       <YouTube
         containerClassName={styles.youtube}
-        videoId={streamId}
+        videoId={video_id}
         opts={videoOpts}
         className={styles.youtubeActual}
       />

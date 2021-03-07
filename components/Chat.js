@@ -1,25 +1,16 @@
-const Chat = ({ slidoView }) => {
-  const questions = slidoView == "questions";
+const Chat = ({ video_id }) => {
   return (
-    <div>
-      <div style={{ width: "100%", display: questions ? "block" : "none" }}>
-        <iframe
-          src={`https://app.sli.do/event/gyvsokri/live/questions`}
-          height="600px"
-          width="100%"
-          frameBorder="0"
-          style={{ minHeight: "600px", minWidth: "300px" }}
-        ></iframe>
-      </div>
-      <div style={{ width: "100%", display: questions ? "none" : "block" }}>
-        <iframe
-          src={`https://app.sli.do/event/gyvsokri/live/polls`}
-          height="600px"
-          width="100%"
-          frameBorder="0"
-          style={{ minHeight: "600px", minWidth: "300px" }}
-        ></iframe>
-      </div>
+    <div id="chat-embed-wrapper">
+      <iframe
+        height="600px"
+        width="100%"
+        referrerPolicy="origin"
+        src={
+          `https://www.youtube.com/live_chat?v=${video_id}&embed_domain=` +
+          window.location.hostname
+        }
+        id="chat-embed"
+      ></iframe>
     </div>
   );
 };
