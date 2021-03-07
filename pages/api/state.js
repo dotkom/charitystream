@@ -11,7 +11,7 @@ import {
 const username = process.env.DATABASE_USER;
 const password = process.env.DATABASE_PASSWORD;
 const dbname = "Charity";
-export const url = `mongodb+srv://${username}:${password}@mongo-db.a7ts5.mongodb.net/${dbname}?retryWrites=true&w=majority`;
+export const url = "mongodb://mongo:27017";
 
 export default async function handler(_, res) {
   mongoose.connect(url, {
@@ -19,6 +19,10 @@ export default async function handler(_, res) {
     useUnifiedTopology: true,
     useFindAndModify: false,
     useCreateIndex: true,
+    user: username,
+    pass: password,
+    dbName: dbname,
+    authSource: "admin"
   });
 
   // Get all the state we need for the page
