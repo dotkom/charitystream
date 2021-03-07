@@ -16,22 +16,17 @@ export default function Index() {
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
 
+  let video_id = "-t1NbLvPKkE";
+
   return (
     <>
       <div className={"flex h-screen flex-wrap justify-evenly"}>
         <div className={"text-lg"}>
-          {/*
-          <img
-            src="https://i.imgur.com/PUjDuS9.png"
-            width="120px"
-            style={{ position: "absolute" }}
-          />
-          */}
-          <Stream streamId={data.streamLink.link} />
+          <Stream video_id={video_id} />
         </div>
         <div className="flex max-w-full flex-grow justify-center flex-wrap">
           <div className={"flex-grow max-w-lg"}>
-            <Chat slidoView={data.slidoView.type} />
+            <Chat video_id={video_id} />
           </div>
           <div className={"flex-grow max-w-lg"}>
             <Vipps items={data.vipps} topDonor={data.topDonor} />
