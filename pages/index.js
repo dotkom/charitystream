@@ -27,11 +27,11 @@ export default function Index() {
             style={{ position: "absolute" }}
           />
           */}
-          <Stream streamId={data.streamLink.link} />
+          <Stream streamId={null} />
         </div>
         <div className="flex max-w-full flex-grow justify-center flex-wrap">
           <div className={"flex-grow max-w-lg"}>
-            <Chat slidoView={data.slidoView.type} />
+            <Chat slidoView={null} />
           </div>
           <div className={"flex-grow max-w-lg"}>
             <Vipps items={data.vipps} topDonor={data.topDonor} />
