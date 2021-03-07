@@ -11,8 +11,7 @@ import {
 const username = process.env.DATABASE_USER;
 const password = process.env.DATABASE_PASSWORD;
 const dbname = "Charity";
-
-export const url = `mongodb+srv://${username}:${password}@cluster.au8e8.mongodb.net/${dbname}?retryWrites=true&w=majority`;
+export const url = `mongodb+srv://${username}:${password}@mongo-db.a7ts5.mongodb.net/${dbname}?retryWrites=true&w=majority`;
 
 export default async function handler(_, res) {
   mongoose.connect(url, {
