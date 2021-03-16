@@ -18,8 +18,6 @@ export default function Index() {
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
 
-  let video_id = "-t1NbLvPKkE";
-
   return (
     <>
       <div className={"flex h-screen flex-wrap justify-evenly"}>
@@ -30,12 +28,12 @@ export default function Index() {
           />
         </div>
         <div className={"text-lg"}>
-          <Stream video_id={video_id} />
+          <Stream link={data.streamLink} />
         </div>
 
         <div className="flex max-w-full flex-grow justify-center flex-wrap">
           <div className={"flex-grow max-w-lg"}>
-            <Chat video_id={video_id} />
+            <Chat link={data.streamLink} />
           </div>
           <div className={"flex-grow max-w-lg"}>
             <Vipps items={data.vipps} topDonor={data.topDonor} />

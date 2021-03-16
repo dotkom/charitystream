@@ -47,7 +47,7 @@ export default async function handler(_, res) {
       auctions,
       totalAmount,
       vipps: vipps.slice(vipps.length - 7, vipps.length),
-      streamLink: "testlink.poopoo",
+      streamLink,
       stretchGoals,
       topDonor,
       rulesheet,

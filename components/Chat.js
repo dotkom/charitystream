@@ -1,4 +1,4 @@
-const Chat = ({ video_id }) => {
+const Chat = (props) => {
   return (
     <div id="chat-embed-wrapper">
       <iframe
@@ -6,7 +6,7 @@ const Chat = ({ video_id }) => {
         width="100%"
         referrerPolicy="origin"
         src={
-          `https://www.youtube.com/live_chat?v=${video_id}&embed_domain=` +
+          `https://www.youtube.com/live_chat?v=${props.link.link}&embed_domain=` +
           window.location.hostname
         }
         id="chat-embed"
