@@ -10,7 +10,7 @@ import {
 const username = process.env.DATABASE_USER;
 const password = process.env.DATABASE_PASSWORD;
 const dbname = "Charity";
-export const url = "mongodb://mongo:27017";
+export const url = process.env.DATABASE_URL;
 
 export default async function handler(_, res) {
   mongoose.connect(url, {
@@ -25,6 +25,7 @@ export default async function handler(_, res) {
   });
 
   // Get all the state we need for the page
+
   const auctions = await Auction.find({});
   const vipps = await Vipps.find({});
   const streamLink = await StreamLink.findOne().sort({ date: -1 }).limit(1);
@@ -44,7 +45,7 @@ export default async function handler(_, res) {
       auctions,
       totalAmount,
       vipps: vipps.slice(vipps.length - 7, vipps.length),
-      streamLink,
+      streamLink: "testlink.poopoo",
       stretchGoals,
       topDonor,
     })
