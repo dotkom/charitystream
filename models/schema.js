@@ -5,6 +5,7 @@ delete mongoose.connection.models["Vipps"];
 delete mongoose.connection.models["StreamLink"];
 delete mongoose.connection.models["StretchGoal"];
 delete mongoose.connection.models["Bid"];
+delete mongoose.connection.models["Rulesheet"];
 
 const AuctionSchema = new mongoose.Schema(
   {
@@ -53,3 +54,11 @@ const BidSchema = new mongoose.Schema(
   { autoCreate: true, timestamps: true }
 );
 export const Bid = mongoose.model("Bid", BidSchema);
+
+const RulesheetSchema = new mongoose.Schema(
+  {
+    markdown: { type: String, default: "" },
+  },
+  { autoCreate: true, timestamps: true }
+);
+export const Rulesheet = mongoose.model("Rulesheet", RulesheetSchema);

@@ -5,6 +5,7 @@ import {
   Vipps,
   StreamLink,
   StretchGoal,
+  Rulesheet,
 } from "../../models/schema.js";
 
 const username = process.env.DATABASE_USER;
@@ -31,6 +32,7 @@ export default async function handler(_, res) {
   const streamLink = await StreamLink.findOne().sort({ date: -1 }).limit(1);
   const stretchGoals = await StretchGoal.find({}).sort("goal");
   const topDonor = await Vipps.findOne({}).sort({ amount: -1 }).limit(1);
+  const rulesheet = await Rulesheet.findOne({});
 
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
@@ -48,6 +50,7 @@ export default async function handler(_, res) {
       streamLink: "testlink.poopoo",
       stretchGoals,
       topDonor,
+      rulesheet,
     })
   );
 }
