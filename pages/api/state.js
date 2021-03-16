@@ -4,7 +4,6 @@ import {
   Auction,
   Vipps,
   StreamLink,
-  SlidoView,
   StretchGoal,
 } from "../../models/schema.js";
 
@@ -22,14 +21,13 @@ export default async function handler(_, res) {
     user: username,
     pass: password,
     dbName: dbname,
-    authSource: "admin"
+    authSource: "admin",
   });
 
   // Get all the state we need for the page
   const auctions = await Auction.find({});
   const vipps = await Vipps.find({});
   const streamLink = await StreamLink.findOne().sort({ date: -1 }).limit(1);
-  const slidoView = await SlidoView.findOne().sort({ date: -1 }).limit(1);
   const stretchGoals = await StretchGoal.find({}).sort("goal");
   const topDonor = await Vipps.findOne({}).sort({ amount: -1 }).limit(1);
 
@@ -47,7 +45,6 @@ export default async function handler(_, res) {
       totalAmount,
       vipps: vipps.slice(vipps.length - 7, vipps.length),
       streamLink,
-      slidoView,
       stretchGoals,
       topDonor,
     })

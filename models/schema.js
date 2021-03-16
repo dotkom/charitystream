@@ -3,7 +3,6 @@ import mongoose from "mongoose";
 delete mongoose.connection.models["Auction"];
 delete mongoose.connection.models["Vipps"];
 delete mongoose.connection.models["StreamLink"];
-delete mongoose.connection.models["SlidoView"];
 delete mongoose.connection.models["StretchGoal"];
 delete mongoose.connection.models["Bid"];
 
@@ -33,14 +32,6 @@ const StreamLinkSchema = new mongoose.Schema(
   { autoCreate: true }
 );
 export const StreamLink = mongoose.model("StreamLink", StreamLinkSchema);
-
-const SlidoViewSchema = new mongoose.Schema(
-  {
-    type: { type: String, default: "questions" },
-  },
-  { autoCreate: true }
-);
-export const SlidoView = mongoose.model("SlidoView", SlidoViewSchema);
 
 const StretchGoalSchema = new mongoose.Schema(
   {
