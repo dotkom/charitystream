@@ -4,14 +4,13 @@ import {
   Auction,
   Vipps,
   StreamLink,
-  SlidoView,
   StretchGoal,
 } from "../../models/schema.js";
 
 const username = process.env.DATABASE_USER;
 const password = process.env.DATABASE_PASSWORD;
 const dbname = "Charity";
-export const url = "mongodb://mongo:27017";
+export const url = process.env.DATABASE_URL;
 
 export default async function handler(_, res) {
   mongoose.connect(url, {
@@ -22,14 +21,14 @@ export default async function handler(_, res) {
     user: username,
     pass: password,
     dbName: dbname,
-    authSource: "admin"
+    authSource: "admin",
   });
 
   // Get all the state we need for the page
+
   const auctions = await Auction.find({});
   const vipps = await Vipps.find({});
   const streamLink = await StreamLink.findOne().sort({ date: -1 }).limit(1);
-  const slidoView = await SlidoView.findOne().sort({ date: -1 }).limit(1);
   const stretchGoals = await StretchGoal.find({}).sort("goal");
   const topDonor = await Vipps.findOne({}).sort({ amount: -1 }).limit(1);
 
@@ -46,8 +45,7 @@ export default async function handler(_, res) {
       auctions,
       totalAmount,
       vipps: vipps.slice(vipps.length - 7, vipps.length),
-      streamLink,
-      slidoView,
+      streamLink: "testlink.poopoo",
       stretchGoals,
       topDonor,
     })
