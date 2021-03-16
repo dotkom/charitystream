@@ -27,24 +27,26 @@ export default function Index() {
             totalAmount={data.totalAmount}
           />
         </div>
-        <div className={"text-lg"}>
-          <Stream link={data.streamLink} />
+
+        <div className="flex max-w-full flex-grow justify-center flex-wrap">
+          <div className={"text-lg"}>
+            <Stream link={data.streamLink} />
+          </div>
+          <div className={"flex-grow max-w-lg"}>
+            <Chat link={data.streamLink} />
+          </div>
         </div>
 
         <div className="flex max-w-full flex-grow justify-center flex-wrap">
-          <div className={"flex-grow max-w-lg"}>
-            <Chat link={data.streamLink} />
+          <div className={"w-screen"}>
+            <StretchGoals
+              stretchGoals={data.stretchGoals}
+              totalAmount={data.totalAmount}
+            />
           </div>
           <div className={"flex-grow max-w-lg"}>
             <Vipps items={data.vipps} topDonor={data.topDonor} />
           </div>
-        </div>
-
-        <div className={"w-screen"}>
-          <StretchGoals
-            stretchGoals={data.stretchGoals}
-            totalAmount={data.totalAmount}
-          />
         </div>
 
         <div>
