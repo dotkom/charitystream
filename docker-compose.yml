@@ -1,7 +1,6 @@
-version: '3.1'
+version: "3.1"
 
 services:
-
   mongo:
     image: mongo
     restart: always
@@ -10,7 +9,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: ${DATABASE_PASSWORD}
       MONGO_INITDB_DATABASE: Charity
     volumes:
-       - db-data:/data/db
+      - db-data:/data/db
     ports:
       - 27017:27017
 
@@ -18,10 +17,11 @@ services:
     build: .
     restart: always
     ports:
-      - 3001:3000
+      - 80:3000
     environment:
       DATABASE_USER: ${DATABASE_USER}
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_URL: ${DATABASE_URL}
     links:
       - "mongo"
 volumes:

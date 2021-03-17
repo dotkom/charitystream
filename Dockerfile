@@ -17,5 +17,5 @@ COPY --from=build /build/package*.json ./
 COPY --from=build /build/.next ./.next
 RUN npm install next
 
-EXPOSE 3000
+EXPOSE 80
 CMD npm run start
