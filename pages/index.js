@@ -16,15 +16,6 @@ export default function Index() {
     refreshInterval: 5000,
   });
 
-  if (data) {
-    for (let i of data.auctions) {
-      for (let j of data.bids) {
-      }
-    }
-  }
-
-  console.log(data);
-
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
 

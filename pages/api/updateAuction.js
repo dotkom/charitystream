@@ -14,14 +14,21 @@ export default async function handler(req, res) {
     useCreateIndex: true,
   });
 
-  let document = await Auction.findOneAndUpdate(
-    { i: req.body.i },
-    { highestBid: req.body.id }
-  );
+  const auctions = await Auction.find({});
+
+  for (let auction of auctions) {
+    let highestBidder = await Bid.find({ item: auction.i })
+      .sort({ amount: -1 })
+      .limit(1);
+    if (highestBidder.length > 0) {
+      auction.highestBid = highestBidder[0]._id;
+    } else auction.highestBid = null;
+    await auction.save();
+  }
 
   switch (method) {
     case "POST":
-      res.status(200).json(document);
+      res.status(200).json("Ok :)");
       break;
     default:
       res.setHeader("Allow", ["POST"]);
