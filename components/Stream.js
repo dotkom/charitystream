@@ -9,8 +9,6 @@ const Stream = (props) => {
     },
   };
 
-  console.log(props);
-
   return (
     <div className={styles.youtubeWrapper}>
       <YouTube
