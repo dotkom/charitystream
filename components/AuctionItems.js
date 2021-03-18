@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Modal from "react-modal";
-import styles from "./AuctionItems.module.css";
 
 import AuctionItem from "./AuctionItem";
 
@@ -59,8 +58,8 @@ const AuctionItems = (props) => {
         },
         body: JSON.stringify({
           ...formData,
-          item: activeItem,
-          description: props.items[activeItem].description,
+          item: activeItem.i,
+          description: activeItem.description,
         }),
       });
 
