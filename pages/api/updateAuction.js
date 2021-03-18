@@ -21,7 +21,8 @@ export default async function handler(req, res) {
       .sort({ amount: -1 })
       .limit(1);
     if (highestBidder.length > 0) {
-      auction.highestBid = highestBidder[0]._id;
+      auction.highestBid = highestBidder[0].name;
+      auction.price = highestBidder[0].amount;
     } else auction.highestBid = null;
     await auction.save();
   }

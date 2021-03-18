@@ -6,6 +6,7 @@ const AuctionItem = (props) => {
       style={{ background: "#f9b759" }}
     >
       <div className="text-black font-bold text-2xl mb-2">{props.price},-</div>
+      <span className="text-black text-base mt-4 mb-4">{props.name}</span>
       <hr />
       <p className="text-black text-base mt-4 mb-4">{props.description}</p>
     </div>

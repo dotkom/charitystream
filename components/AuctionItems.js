@@ -104,8 +104,9 @@ const AuctionItems = (props) => {
           <AuctionItem
             key={key}
             description={props.items[Number(key)].description}
-            onClick={() => openModal(key)}
+            onClick={() => openModal(props.items[Number(key)])}
             price={props.items[Number(key)].price}
+            name={props.items[Number(key)].highestBid}
           />
         ))}
         <Modal
