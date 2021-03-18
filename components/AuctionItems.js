@@ -59,7 +59,7 @@ const AuctionItems = (props) => {
         },
         body: JSON.stringify({
           ...formData,
-          item: activeItem.id,
+          item: activeItem._id,
           description: activeItem.description,
         }),
       });
@@ -100,12 +100,12 @@ const AuctionItems = (props) => {
         Trykk på et auksjonsobjekt for å by!
       </div>
       <div className="flex flex-row flex-wrap justify-evenly">
-        {props.items.map((item) => (
+        {Object(props.items).map((key) => (
           <AuctionItem
-            key={item.description}
-            description={item.description}
-            onClick={() => openModal(item)}
-            price={item.price}
+            key={key}
+            description={props.items[Number(key)].description}
+            onClick={() => openModal(key)}
+            price={props.items[Number(key)].price}
           />
         ))}
         <Modal

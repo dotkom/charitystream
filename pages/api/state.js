@@ -6,6 +6,7 @@ import {
   StreamLink,
   StretchGoal,
   Rulesheet,
+  Bid,
 } from "../../models/schema.js";
 
 const username = process.env.DATABASE_USER;
@@ -28,6 +29,7 @@ export default async function handler(_, res) {
   // Get all the state we need for the page
 
   const auctions = await Auction.find({});
+  const bids = await Bid.find({});
   const vipps = await Vipps.find({});
   const streamLink = await StreamLink.findOne().sort({ date: -1 }).limit(1);
   const stretchGoals = await StretchGoal.find({}).sort("goal");
@@ -51,6 +53,7 @@ export default async function handler(_, res) {
       stretchGoals,
       topDonor,
       rulesheet,
+      bids,
     })
   );
 }

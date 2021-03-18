@@ -7,6 +7,7 @@ import styles from "../frontpage.module.css";
 import Stream from "../components/Stream";
 import Chat from "../components/Chat";
 import ProgressBar from "../components/ProgressBar";
+import Reaact, { useEffect } from "react";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -14,6 +15,15 @@ export default function Index() {
   const { data, error } = useSWR("/api/state", fetcher, {
     refreshInterval: 5000,
   });
+
+  if (data) {
+    for (let i of data.auctions) {
+      for (let j of data.bids) {
+      }
+    }
+  }
+
+  console.log(data);
 
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;

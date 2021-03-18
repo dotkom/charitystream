@@ -12,6 +12,8 @@ export default async function handler(req, res) {
     useCreateIndex: true,
   });
 
+  console.log(req.body);
+
   switch (method) {
     case "POST":
       const bid = new Bid(req.body);
