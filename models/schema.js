@@ -12,6 +12,7 @@ const AuctionSchema = new mongoose.Schema(
     id: { type: Number },
     description: { type: String, default: "NULL" },
     price: { type: Number, default: 0 },
+    highestBid: { type: String, default: "NULL" },
   },
   { autoCreate: true }
 );
