@@ -5,7 +5,7 @@ let MarkdownIt = require("markdown-it"),
 
 const Rulesheet = (props) => {
   return (
-    <div className="flex flex-row flex-wrap justify-evenly">
+    <div className={styles.rulesheetWrapper}>
       <div
         className={styles.markdownBody}
         dangerouslySetInnerHTML={{

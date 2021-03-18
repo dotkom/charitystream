@@ -1,9 +1,9 @@
 import animations from "../styles/animations.module.css";
+import QRCode from "../components/QRCode";
 
 const Vipp = (props) => {
   return (
     <div>
-      <div className="font-bold m-1 text-xl mb-2">Siste donasjoner:</div>
       <div
         className={`flex items-center overflow-hidden m-3 rounded-tl-lg rounded-tr-lg rounded-br-lg shadow-md ${animations.wiggle}`}
         style={{ background: "#ff5b24" }}
@@ -44,10 +44,12 @@ const Vipps = (props) => {
   ));
 
   return (
-    <div class="flex flex-col">
+    <div class="flex flex-col justify-center">
       <TopVipp vipp={props.topDonor} />
       <hr />
+      <div className="font-bold m-1 text-xl mb-2">Siste donasjoner:</div>
       {vipps}
+      <QRCode style="margin: auto" />
     </div>
   );
 };
