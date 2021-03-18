@@ -7,7 +7,8 @@ import styles from "../frontpage.module.css";
 import Stream from "../components/Stream";
 import Chat from "../components/Chat";
 import ProgressBar from "../components/ProgressBar";
-import Reaact, { useEffect } from "react";
+import React, { useEffect } from "react";
+import Countdown from "react-countdown";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -22,13 +23,13 @@ export default function Index() {
   return (
     <>
       <div className={"flex h-screen flex-wrap justify-evenly"}>
+        <Countdown date={data.timer[0].time} />,
         <div className={"w-screen"}>
           <ProgressBar
             stretchGoals={data.stretchGoals}
             totalAmount={data.totalAmount}
           />
         </div>
-
         <div className="flex max-w-full flex-grow justify-center flex-wrap">
           <div className={"text-lg"}>
             <Stream link={data.streamLink} />
@@ -37,7 +38,6 @@ export default function Index() {
             <Chat link={data.streamLink} />
           </div>
         </div>
-
         <div className="flex max-w-full flex-grow justify-center flex-wrap">
           <div className={"w-screen"}>
             <StretchGoals
@@ -49,11 +49,9 @@ export default function Index() {
             <Vipps items={data.vipps} topDonor={data.topDonor} />
           </div>
         </div>
-
         <div>
           <PagesButtons />
         </div>
-
         <div className={"w-screen"}>
           <SilentAuctionSlider items={data.auctions} />
         </div>
