@@ -6,7 +6,7 @@ delete mongoose.connection.models["StreamLink"];
 delete mongoose.connection.models["StretchGoal"];
 delete mongoose.connection.models["Bid"];
 delete mongoose.connection.models["Rulesheet"];
-
+delete mongoose.connection.models["Timer"];
 const AuctionSchema = new mongoose.Schema(
   {
     id: { type: Number },
@@ -64,3 +64,11 @@ const RulesheetSchema = new mongoose.Schema(
   { autoCreate: true, timestamps: true }
 );
 export const Rulesheet = mongoose.model("Rulesheet", RulesheetSchema);
+
+const TimerSchema = new mongoose.Schema(
+  {
+    time: { type: String, default: "0000" },
+  },
+  { autoCreate: true }
+);
+export const Timer = mongoose.model("Timer", TimerSchema);
