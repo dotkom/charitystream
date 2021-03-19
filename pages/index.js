@@ -9,7 +9,7 @@ import Chat from "../components/Chat";
 import ProgressBar from "../components/ProgressBar";
 import React, { useEffect } from "react";
 import Countdown from "react-countdown";
-
+import CountdownRenderer from "../components/CoundownRenderer";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Index() {
@@ -23,12 +23,14 @@ export default function Index() {
   return (
     <>
       <div className={"flex h-screen flex-wrap justify-evenly"}>
-        <Countdown date={data.timer[0].time} />,
         <div className={"w-screen"}>
           <ProgressBar
             stretchGoals={data.stretchGoals}
             totalAmount={data.totalAmount}
           />
+        </div>
+        <div>
+          <Countdown date={data.timer[0].time} renderer={CountdownRenderer} />
         </div>
         <div className="flex max-w-full flex-grow justify-center flex-wrap">
           <div className={"text-lg"}>
