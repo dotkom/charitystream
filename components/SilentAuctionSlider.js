@@ -1,20 +1,25 @@
 import styles from "./SilentAuctionSlider.module.css";
 
-import AuctionItem from "./AuctionItem";
-
 const SilentAuctionSlider = (props) => {
-  const items = props.items.map((item, index) => (
+  let items = props.items;
+
+  items = items.sort((a, b) => {
+    a.price - b.price;
+  });
+
+  items = props.items.map((item, index) => (
     <tr key={index}>
       <td>{item.description}</td>
-      <td>{item.price}</td>
+      <td>{item.price},-</td>
       <td>{item.name}</td>
     </tr>
   ));
 
   return (
     <div className={styles.wrapper}>
-      <table>
-        <tr classname={styles.header}>
+      <div className="font-bold m-1 text-xl mb-2">Enkel oversikt auksjoner</div>
+      <table className={styles.tableMain}>
+        <tr className={styles.header}>
           <th>Auksjon</th>
           <th>Pris</th>
           <th>Budgiver</th>

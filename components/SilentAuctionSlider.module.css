@@ -5,11 +5,17 @@
   text-align: center;
 }
 
-.wrapper table {
-  width: 50%;
-}
-
 .wrapper th,
 .wrapper td {
   border-bottom: 1px solid #f9b759;
+  padding: 10px;
+}
+
+.header {
+  color: #f9b759;
+}
+
+.tableMain {
+  margin-left: auto;
+  margin-right: auto;
 }
