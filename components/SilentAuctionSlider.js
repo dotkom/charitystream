@@ -4,16 +4,23 @@ import AuctionItem from "./AuctionItem";
 
 const SilentAuctionSlider = (props) => {
   const items = props.items.map((item, index) => (
-    <AuctionItem
-      key={index}
-      description={item.description}
-      price={item.price}
-    />
+    <tr key={index}>
+      <td>{item.description}</td>
+      <td>{item.price}</td>
+      <td>{item.name}</td>
+    </tr>
   ));
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.slideshow}>{items}</div>
+      <table>
+        <tr classname={styles.header}>
+          <th>Auksjon</th>
+          <th>Pris</th>
+          <th>Budgiver</th>
+        </tr>
+        {items}
+      </table>
     </div>
   );
 };
