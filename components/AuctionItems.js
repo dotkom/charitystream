@@ -24,12 +24,14 @@ const AuctionItems = (props) => {
 
   const validate = (formData) => {
     clearError();
-    if (formData.amount < activeItem.price) {
+    if (formData.amount <= activeItem.price * 1.05) {
       setFormData({
         ...formData,
         error: {
           ...formData.error,
-          amount: `Budet ditt kan ikke være mindre enn ${activeItem.price},- kr!`,
+          amount: `Budet ditt kan ikke være mindre enn ${
+            activeItem.price * 1.05
+          },- kr!`,
         },
       });
       return false;
@@ -188,7 +190,7 @@ const AuctionItems = (props) => {
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                     id="amount"
                     type="number"
-                    placeholder={activeItem.price * 1.1}
+                    placeholder={activeItem.price * 1.05}
                     onChange={(e) =>
                       setFormData({ ...formData, amount: e.target.value })
                     }
