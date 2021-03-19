@@ -65,7 +65,7 @@ const AuctionItems = (props) => {
 
       if (res.status == 200) {
         setSuccess(
-          `Ditt bud på ${formData.amount} til ${activeItem.description} ble registrert! Det vil dukke opp etter at Arrkom har verifisert det.`
+          `Ditt bud på ${formData.amount} til ${activeItem.description} ble registrert! Du bør kunne se budet straks! Dersom dette ble gjort ved en feil, vennligst ta kontakt med Arrkom!`
         );
       } else {
         setSuccess(
