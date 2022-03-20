@@ -11,7 +11,7 @@ import {
 
 const username = process.env.DATABASE_USER;
 const password = process.env.DATABASE_PASSWORD;
-const dbname = "Charity";
+const dbname = "Cluster0";
 export const url = process.env.DATABASE_URL;
 
 export default async function handler(_, res) {
@@ -23,12 +23,13 @@ export default async function handler(_, res) {
     user: username,
     pass: password,
     dbName: dbname,
-    authSource: "admin",
   });
 
   // Get all the state we need for the page
 
   const auctions = await Auction.find({});
+  console.log(auctions);
+
   const bids = await Bid.find({});
   const vipps = await Vipps.find({});
   const streamLink = await StreamLink.findOne().sort({ date: -1 }).limit(1);
@@ -44,16 +45,18 @@ export default async function handler(_, res) {
     return a + b.amount;
   }, 0);
 
-  res.end(
-    JSON.stringify({
-      auctions,
-      totalAmount,
-      vipps: vipps.slice(vipps.length - 7, vipps.length),
-      streamLink,
-      stretchGoals,
-      topDonor,
-      rulesheet,
-      bids,
-    })
-  );
+  let state = JSON.stringify({
+    auctions,
+    totalAmount,
+    vipps: vipps.slice(vipps.length - 7, vipps.length),
+    streamLink,
+    stretchGoals,
+    topDonor,
+    rulesheet,
+    bids,
+  });
+
+  console.log(state);
+
+  res.end(state);
 }

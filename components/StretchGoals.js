@@ -1,5 +1,6 @@
 export default function StretchGoals(props) {
   const { stretchGoals, totalAmount } = props;
+  console.log(props);
   const nextGoal = stretchGoals.find(
     (stretchGoal) => stretchGoal.goal > totalAmount
   );

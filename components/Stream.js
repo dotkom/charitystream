@@ -13,7 +13,7 @@ const Stream = (props) => {
     <div className={styles.youtubeWrapper}>
       <YouTube
         containerClassName={styles.youtube}
-        videoId={props.link.link}
+        videoId={props.link?.link}
         opts={videoOpts}
         className={styles.youtubeActual}
       />
