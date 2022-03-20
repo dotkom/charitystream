@@ -100,7 +100,10 @@ const AuctionItems = (props) => {
       <div className="text-4xl text-center p-5 ">
         Trykk på et auksjonsobjekt for å by!
       </div>
-      <div className="flex flex-row flex-wrap justify-evenly">
+      <div className="text-xl text-center">
+        Nye bud må øke nåværende bud med 5% for å være gyldige.
+      </div>
+      <div className="flex flex-row flex-wrap justify-evenly pt-10">
         {Object.keys(props.items).map((key) => (
           <AuctionItem
             key={key}
@@ -108,6 +111,7 @@ const AuctionItems = (props) => {
             onClick={() => openModal(props.items[Number(key)])}
             price={props.items[Number(key)].price}
             name={props.items[Number(key)].highestBid}
+            title={props.items[Number(key)].title}
           />
         ))}
         <Modal
@@ -125,7 +129,7 @@ const AuctionItems = (props) => {
               >
                 <div className="text-2xl">By på</div>
                 <div className="text-2xl text-white font-bold italic">
-                  {activeItem.description}
+                  {activeItem.title}
                 </div>
                 <p>Nåværende bud: {activeItem.price},-</p>
                 <div className="mb-4">

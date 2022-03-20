@@ -11,7 +11,7 @@ import {
 
 const username = process.env.DATABASE_USER;
 const password = process.env.DATABASE_PASSWORD;
-const dbname = "Cluster0";
+const dbname = process.env.DATABASE_NAME || "dev";
 export const url = process.env.DATABASE_URL;
 
 export default async function handler(_, res) {
@@ -28,8 +28,6 @@ export default async function handler(_, res) {
   // Get all the state we need for the page
 
   const auctions = await Auction.find({});
-  console.log(auctions);
-
   const bids = await Bid.find({});
   const vipps = await Vipps.find({});
   const streamLink = await StreamLink.findOne().sort({ date: -1 }).limit(1);
@@ -55,8 +53,6 @@ export default async function handler(_, res) {
     rulesheet,
     bids,
   });
-
-  console.log(state);
 
   res.end(state);
 }

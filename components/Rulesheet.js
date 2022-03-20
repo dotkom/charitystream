@@ -9,7 +9,7 @@ const Rulesheet = (props) => {
       <div
         className={styles.markdownBody}
         dangerouslySetInnerHTML={{
-          __html: md.render(props.rulesheet.markdown),
+          __html: md.render(props.rulesheet?.markdown),
         }}
       />
     </div>

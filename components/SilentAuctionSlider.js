@@ -9,7 +9,7 @@ const SilentAuctionSlider = (props) => {
 
   items = props.items.map((item, index) => (
     <tr key={index}>
-      <td>{item.description}</td>
+      <td>{item.title}</td>
       <td>{item.price},-</td>
       <td>{item.highestBid}</td>
     </tr>

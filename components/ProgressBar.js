@@ -1,6 +1,5 @@
 export default function ProgressBar(props) {
   const { stretchGoals, totalAmount } = props;
-  console.log(props);
   const maxAmount = stretchGoals[stretchGoals.length - 1]?.goal;
   const meterLen = Math.floor((totalAmount / maxAmount) * 100);
   const nextGoal = stretchGoals.find(
