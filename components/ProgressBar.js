@@ -18,18 +18,18 @@ export default function ProgressBar(props) {
         style={{ minHeight: "150px", minWidth: "300px", maxWidth: "75%" }}
         className="flex flex-col justify-center flex-grow"
       >
-        <div className="italic text-center">
-          <p className="text-3xl font-medium w-">Totalt innsamlet</p>
+        <div className="text-center">
+          <p className="text-5xl font-medium w-">Totalt innsamlet</p>
         </div>
         <div className="flex flex-col items-center justify-center w-full">
-          <div className="relative flex w-full h-10 m-1 overflow-hidden text-xs bg-green-200 rounded-3xl">
+          <div className="relative flex w-full h-10 m-1 overflow-hidden text-xs bg-teal-200 rounded-3xl">
             <div
               style={{ width: `${meterLen}%`, transition: "width 2s" }}
-              className="bg-green-500 shadow-none"
+              className="bg-teal-500 shadow-none"
             ></div>
             <p className="absolute flex items-center justify-center w-full h-full text-xl text-black">{`${totalAmount}kr av ${maxAmount}kr`}</p>
           </div>
-          <div className="flex text-xl font-semibold text-center justify-evenly">
+          <div className="flex text-2xl font-semibold text-center justify-evenly">
             <p>
               Neste stretch goal:{" "}
               {nextGoal

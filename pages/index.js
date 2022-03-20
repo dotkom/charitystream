@@ -38,25 +38,26 @@ export default function Index() {
           </div>
         </div>
 
-        <div className="flex max-w-full flex-grow justify-center flex-wrap">
-          <div className={"w-screen"}>
+        <div className="flex max-w-full flex-grow justify-evenly flex-wrap mt-10">
+          <div className={""}>
             <StretchGoals
               stretchGoals={data.stretchGoals}
               totalAmount={data.totalAmount}
             />
           </div>
-          <div className={"flex-grow max-w-lg"}>
+          <div className={"flex-grow max-w-lg bg-teal-500 rounded-md p-5"}>
             <Vipps items={data.vipps} topDonor={data.topDonor} />
           </div>
         </div>
 
-        <div>
+        <div className={"flex w-screen justify-evenly"}>
           <PagesButtons />
         </div>
 
         <div className={"w-screen"}>
           <SilentAuctionSlider items={data.auctions} />
         </div>
+        <div className={"m-10"}>footer</div>
       </div>
     </>
   );

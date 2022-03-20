@@ -5,7 +5,7 @@ const Vipp = (props) => {
   return (
     <div>
       <div
-        className={`flex items-center overflow-hidden m-3 rounded-tl-lg rounded-tr-lg rounded-br-lg shadow-md ${animations.wiggle}`}
+        className={`flex items-center bg-teal-500 overflow-hidden m-3 rounded-tl-lg rounded-tr-lg rounded-br-lg shadow-md ${animations.wiggle}`}
         style={{ background: "#ff5b24" }}
       >
         <img src="https://i.imgur.com/RVgB3E6.png" width="50px" />
