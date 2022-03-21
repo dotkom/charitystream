@@ -104,14 +104,14 @@ const AuctionItems = (props) => {
         Nye bud må øke nåværende bud med 5% for å være gyldige.
       </div>
       <div className="flex flex-row flex-wrap justify-evenly pt-10">
-        {Object.keys(props.items).map((key) => (
+        {props.items.auction.map((auction) => (
           <AuctionItem
-            key={key}
-            description={props.items[Number(key)].description}
-            onClick={() => openModal(props.items[Number(key)])}
-            price={props.items[Number(key)].price}
-            name={props.items[Number(key)].highestBid}
-            title={props.items[Number(key)].title}
+            key={auction._id}
+            description={auction.description}
+            onClick={() => openModal(auction)}
+            price={auction.price}
+            name={auction.highestBid}
+            title={auction.title}
           />
         ))}
         <Modal

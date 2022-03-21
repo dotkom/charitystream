@@ -1,8 +1,6 @@
 import Link from "next/link";
-import useSWR from "swr";
 import AuctionItems from "../components/AuctionItems";
-import React, { useEffect } from "react";
-const fetcher = (url) => fetch(url).then((res) => res.json());
+import { getAuctions } from "./hooks/auction";
 
 const NavBar = () => (
   <div className="w-full p-10">
@@ -15,23 +13,15 @@ const NavBar = () => (
 );
 
 export default function AuctionItemsPage() {
-  const { data, error } = useSWR("/api/state", fetcher, {
-    refreshInterval: 5000,
-  });
+  const { auctions, isLoading, isError } = getAuctions();
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      fetch("/api/updateAuction", { method: "POST" });
-    }, 5000);
-  }, []);
-
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
+  if (isError) return <div>Failed to load</div>;
+  if (isLoading) return <div>Loading...</div>;
 
   return (
     <div>
       <NavBar />
-      <AuctionItems items={data.auctions} />
+      <AuctionItems items={auctions} />
     </div>
   );
 }
