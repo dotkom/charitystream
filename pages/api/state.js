@@ -11,7 +11,7 @@ import {
 
 const username = process.env.DATABASE_USER;
 const password = process.env.DATABASE_PASSWORD;
-const dbname = process.env.DATABASE_NAME || "dev";
+const dbname = process.env.DATABASE_NAME || "Charity0";
 export const url = process.env.DATABASE_URL;
 
 export default async function handler(_, res) {
