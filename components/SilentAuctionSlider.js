@@ -9,20 +9,22 @@ const SilentAuctionSlider = (props) => {
 
   items = props.items.map((item, index) => (
     <tr key={index}>
-      <td>{item.title}</td>
-      <td>{item.price},-</td>
-      <td>{item.highestBid}</td>
+      <td className="m-1 text-2xl">{item.title}</td>
+      <td className="m-1 text-2xl">{item.price},-</td>
+      <td className="m-1 text-2xl">{item.highestBid}</td>
     </tr>
   ));
 
   return (
     <div className={styles.wrapper}>
-      <div className="font-bold m-1 text-xl mb-2">Enkel oversikt auksjoner</div>
+      <div className="m-1 text-4xl mb-2 mt-20 text-center">
+        Enkel oversikt auksjoner
+      </div>
       <table className={styles.tableMain}>
         <tr className={styles.header}>
-          <th>Auksjon</th>
-          <th>Pris</th>
-          <th>Høyeste budgiver</th>
+          <th className="m-1 text-3xl ">Auksjon</th>
+          <th className="m-1 text-3xl">Pris</th>
+          <th className="m-1 text-3xl">Høyeste budgiver</th>
         </tr>
         {items}
       </table>

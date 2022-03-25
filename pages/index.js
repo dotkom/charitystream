@@ -22,10 +22,10 @@ export default function Index() {
 
   return (
     <>
-      <div className={"flex h-screen flex-wrap justify-evenly"}>
+      <div className={"flex h-screen flex-wrap justify-between"}>
         <div
           className={
-            " w-screen p-5 flex text-5xl bg-emerald-400 flex-wrap justify-evenly"
+            " w-screen p-5 flex text-5xl bg-emerald-400 flex-wrap justify-stretch"
           }
         >
           Veldedighetsfest 2022 med Online <PagesButtons />
@@ -38,7 +38,7 @@ export default function Index() {
           />
         </div>
 
-        <div className="flex max-w-full flex-grow justify-center flex-wrap">
+        <div className="flex max-w-full w-screen flex-grow justify-center flex-wrap">
           <div className={"text-lg"}>
             <Stream link={data.streamLink} />
           </div>
@@ -47,26 +47,28 @@ export default function Index() {
           </div>
         </div>
 
-        <div className="flex max-w-full flex-grow justify-evenly flex-wrap mt-10">
+        <div className="flex max-w-full flex-grow justify-evenly flex-wrap mt-10 text-beige">
           <div className={""}>
             <StretchGoals
               stretchGoals={data.stretchGoals}
               totalAmount={data.totalAmount}
             />
           </div>
-          <div className={"flex-grow max-w-lg bg-teal-500 rounded-md p-5"}>
+          <div
+            className={
+              "flex-grow max-w-lg bg-regalblue rounded-md p-5 text-beige"
+            }
+          >
             <Vipps items={data.vipps} topDonor={data.topDonor} />
           </div>
-        </div>
-
-        <div className={"flex w-screen justify-evenly"}>
-          <PagesButtons />
         </div>
 
         <div className={"w-screen"}>
           <SilentAuctionSlider items={data.auctions} />
         </div>
-        <div className={"m-10"}>footer</div>
+        <div className={"m-10"}>
+          <p className={"m-10"}> </p>
+        </div>
       </div>
     </>
   );

@@ -7,7 +7,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 const NavBar = () => (
   <div className="w-full p-10">
     <Link href="/">
-      <button className="mb-2 mt-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+      <button className="mb-2 mt-2 bg-yellow hover:bg-regalblue hover:text-beige text-gray-800 font-semibold py-2 px-10  rounded shadow text-2xl">
         Tilbake til hovedsiden
       </button>
     </Link>

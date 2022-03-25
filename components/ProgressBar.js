@@ -15,23 +15,26 @@ export default function ProgressBar(props) {
   return (
     <div className="flex flex-wrap items-center h-full p-2 overflow-hidden justify-evenly">
       <div
-        style={{ minHeight: "150px", minWidth: "300px", maxWidth: "75%" }}
+        style={{ minHeight: "300px", minWidth: "300px", maxWidth: "75%" }}
         className="flex flex-col justify-center flex-grow"
       >
-        <div className="text-center">
-          <p className="text-5xl font-medium w-">Totalt innsamlet</p>
+        <div className="text-left">
+          <p className="p-3 text-4xl">Totalt innsamlet</p>
         </div>
         <div className="flex flex-col items-center justify-center w-full">
-          <div className="relative flex w-full h-10 m-1 overflow-hidden text-xs bg-teal-200 rounded-3xl">
+          <div className="relative flex w-full h-20 m-1 overflow-hidden text-xs bg-regalblue rounded-3xl">
             <div
               style={{ width: `${meterLen}%`, transition: "width 2s" }}
-              className="bg-teal-500 shadow-none"
+              className="bg-turquise shadow-none"
             ></div>
-            <p className="absolute flex items-center justify-center w-full h-full text-xl text-black">{`${totalAmount}kr av ${maxAmount}kr`}</p>
+            <p className="absolute flex items-center justify-center w-full h-full text-2xl text-beige">{`${totalAmount}kr av ${maxAmount}kr`}</p>
           </div>
-          <div className="flex text-2xl font-semibold text-center justify-evenly">
-            <p>
-              Neste stretch goal:{" "}
+          <div className="flex w-full text-left">
+            <p className="p-3 text-4xl">Neste stretch goal: </p>
+          </div>
+
+          <div className="relative flex w-full h-20 m-1 overflow-hidden text-xs bg-indigo-400 rounded-3xl mb-5">
+            <p className="absolute flex items-center justify-center w-full h-full text-2xl text-black">
               {nextGoal
                 ? `${nextGoal.description} på ${nextGoal.goal}kr`
                 : "Tomt for stretchGoals :("}{" "}

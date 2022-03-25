@@ -13,8 +13,8 @@ export default function StretchGoals(props) {
     .reverse();
   return (
     <div className="flex flex-wrap h-full p-2 overflow-hidden justify-evenly">
-      <div className="text-center bg-teal-500 rounded-md p-5 ">
-        <div className="text-4xl">Mål:</div>
+      <div className="text-center bg-regalblue rounded-md p-5 ">
+        <div className="text-4xl p-1">Mål</div>
         <hr />
         <table class="table-auto">
           <tbody>
@@ -23,11 +23,11 @@ export default function StretchGoals(props) {
                 return (
                   <tr key={item.description}>
                     <td
-                      class={`px-4 text-left text-lg text-indigo-400 animate-pulse`}
+                      class={`px-4 text-left text-3xl text-orange animate-pulse`}
                     >
                       {item.description}
                     </td>
-                    <td class={`px-4 text-indigo-400 animate-pulse}`}>
+                    <td class={`text-3xl px-4 text-orange animate-pulse }`}>
                       {item.goal} ,-
                     </td>
                   </tr>
@@ -35,18 +35,18 @@ export default function StretchGoals(props) {
               } else {
                 return (
                   <tr key={item.description}>
-                    <td class={`px-4 text-left text-lg`}>????</td>
-                    <td class={`px-4`}>{item.goal} ,-</td>
+                    <td class={`px-4 text-left text-3xl p-2`}>????</td>
+                    <td class={`px-4 text-3xl`}>{item.goal} ,-</td>
                   </tr>
                 );
               }
             })}
             {reachedGoals.map((item) => (
               <tr key={item.description}>
-                <td class="px-4 line-through text-green-600 text-left text-2xl">
+                <td class="px-4 line-through text-green-600 text-left text-3xl">
                   {item.description}
                 </td>
-                <td class="px-4 text-green-400 text-2xl line-through">
+                <td class="px-4 text-green-400 text-3xl line-through">
                   {item.goal} ,-
                 </td>
               </tr>
