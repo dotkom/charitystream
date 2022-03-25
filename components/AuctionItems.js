@@ -101,7 +101,8 @@ const AuctionItems = (props) => {
         Trykk på et auksjonsobjekt for å by!
       </div>
       <div className="text-xl text-center">
-        Nye bud må øke nåværende bud med 5% for å være gyldige.
+        Nye bud må øke nåværende bud med 5% for å være gyldige. Ingen bud før
+        26.03.2022 klokken 17:00 regnes som gjeldende.
       </div>
       <div className="flex flex-row flex-wrap justify-evenly pt-10">
         {Object.keys(props.items).map((key) => (

@@ -19,18 +19,27 @@ export default function StretchGoals(props) {
         <table class="table-auto">
           <tbody>
             {nextGoals.map((item, i) => {
-              const color =
-                i == nextGoals.length - 1
-                  ? "text-indigo-700 animate-pulse"
-                  : "";
-              return (
-                <tr key={item.description}>
-                  <td class={`px-4 text-left text-2xl ${color}`}>
-                    {item.description}
-                  </td>
-                  <td class={`px-4 text-2xl ${color}`}>{item.goal} ,-</td>
-                </tr>
-              );
+              if (i == nextGoals.length - 1) {
+                return (
+                  <tr key={item.description}>
+                    <td
+                      class={`px-4 text-left text-lg text-indigo-400 animate-pulse`}
+                    >
+                      {item.description}
+                    </td>
+                    <td class={`px-4 text-indigo-400 animate-pulse}`}>
+                      {item.goal} ,-
+                    </td>
+                  </tr>
+                );
+              } else {
+                return (
+                  <tr key={item.description}>
+                    <td class={`px-4 text-left text-lg`}>????</td>
+                    <td class={`px-4`}>{item.goal} ,-</td>
+                  </tr>
+                );
+              }
             })}
             {reachedGoals.map((item) => (
               <tr key={item.description}>

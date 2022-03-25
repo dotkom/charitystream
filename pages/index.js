@@ -7,6 +7,7 @@ import styles from "../frontpage.module.css";
 import Stream from "../components/Stream";
 import Chat from "../components/Chat";
 import ProgressBar from "../components/ProgressBar";
+//import logo from "../Images/Online_bla.png";
 import Reaact, { useEffect } from "react";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -22,6 +23,14 @@ export default function Index() {
   return (
     <>
       <div className={"flex h-screen flex-wrap justify-evenly"}>
+        <div
+          className={
+            " w-screen p-5 flex text-5xl bg-emerald-400 flex-wrap justify-evenly"
+          }
+        >
+          Veldedighetsfest 2022 med Online <PagesButtons />
+          <hr />
+        </div>
         <div className={"w-screen"}>
           <ProgressBar
             stretchGoals={data.stretchGoals}
