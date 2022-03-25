@@ -1,9 +1,12 @@
 const AuctionItem = (props) => {
   return (
     <div
-      className=" rounded overflow-hidden shadow-lg m-2 text-center px-3 py-2 cursor-pointer hover:bg-gray-600 bg-gray-800"
+      className="rounded overflow-hidden shadow-lg m-2 text-center px-3 py-2 cursor-pointer hover:bg-regalblue  "
       onClick={props.onClick}
-      style={{ background: "#2A9D8F", width: "20rem" }}
+      style={{
+        background: "#2A9D8F",
+        width: "20rem",
+      }}
     >
       <div className="text-darkblue  font-bold text-2xl mb-2">
         {props.title}

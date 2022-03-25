@@ -22,9 +22,9 @@ const SilentAuctionSlider = (props) => {
       </div>
       <table className={styles.tableMain}>
         <tr className={styles.header}>
-          <th className="m-1 text-3xl ">Auksjon</th>
-          <th className="m-1 text-3xl">Pris</th>
-          <th className="m-1 text-3xl">Høyeste budgiver</th>
+          <th className="m-1 text-lg sm:text-3xl ">Auksjon</th>
+          <th className="m-1 text-lg sm:text-3xl">Pris</th>
+          <th className="m-1 text-lg sm:text-3xl">Høyeste budgiver</th>
         </tr>
         {items}
       </table>

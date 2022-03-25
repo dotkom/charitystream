@@ -22,13 +22,13 @@ export default function Index() {
 
   return (
     <>
-      <div className={"flex h-screen flex-wrap justify-between"}>
+      <div className={"flex h-screen flex-wrap justify-center"}>
         <div
           className={
-            " w-screen p-5 flex text-5xl bg-emerald-400 flex-wrap justify-stretch"
+            " w-screen sm:w-3/4 p-5 flex text-5xl bg-emerald-400 flex-wrap"
           }
         >
-          Veldedighetsfest 2022 med Online <PagesButtons />
+          Veldedighetsfest 2022 <PagesButtons />
           <hr />
         </div>
         <div className={"w-screen"}>

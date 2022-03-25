@@ -23,11 +23,13 @@ export default function StretchGoals(props) {
                 return (
                   <tr key={item.description}>
                     <td
-                      class={`px-4 text-left text-3xl text-orange animate-pulse`}
+                      class={`px-4 text-left text-lg sm:text-3xl text-orange animate-pulse`}
                     >
                       {item.description}
                     </td>
-                    <td class={`text-3xl px-4 text-orange animate-pulse }`}>
+                    <td
+                      class={`text-lg sm:text-3xl px-4 text-orange animate-pulse }`}
+                    >
                       {item.goal} ,-
                     </td>
                   </tr>
@@ -35,18 +37,20 @@ export default function StretchGoals(props) {
               } else {
                 return (
                   <tr key={item.description}>
-                    <td class={`px-4 text-left text-3xl p-2`}>????</td>
-                    <td class={`px-4 text-3xl`}>{item.goal} ,-</td>
+                    <td class={`px-4 text-left text-lg sm:text-3xl p-2`}>
+                      ????
+                    </td>
+                    <td class={`px-4 text-lg sm:text-3xl`}>{item.goal} ,-</td>
                   </tr>
                 );
               }
             })}
             {reachedGoals.map((item) => (
               <tr key={item.description}>
-                <td class="px-4 line-through text-green-600 text-left text-3xl">
+                <td class="px-4 line-through text-green-600 text-left text-lg sm:text-3xl">
                   {item.description}
                 </td>
-                <td class="px-4 text-green-400 text-3xl line-through">
+                <td class="px-4 text-green-400 text-lg sm:text-3xl line-through">
                   {item.goal} ,-
                 </td>
               </tr>
