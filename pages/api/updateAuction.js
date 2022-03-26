@@ -17,7 +17,7 @@ export default async function handler(req, res) {
   const auctions = await Auction.find({});
 
   for (let auction of auctions) {
-    let highestBidder = await Bid.find({ item: auction.i })
+    let highestBidder = await Bid.find({ item: auction._id })
       .sort({ amount: -1 })
       .limit(1);
     if (highestBidder.length > 0) {

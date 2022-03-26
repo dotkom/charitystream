@@ -60,7 +60,7 @@ const AuctionItems = (props) => {
         },
         body: JSON.stringify({
           ...formData,
-          item: activeItem.i,
+          item: activeItem._id,
           description: activeItem.description,
         }),
       });
