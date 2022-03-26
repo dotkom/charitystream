@@ -10,7 +10,7 @@ const QRCode = () => {
         height="256"
         className={styles.qr}
       />
-      <div className="font-bold m-1 text-xl mb-2">Scan QR for Vipps</div>
+      <div className="font-bold m-1 text-xl mb-2">Scan QR for Vipps (Vippsnr. 605726)</div>
     </div>
   );
 };
