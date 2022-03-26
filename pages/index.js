@@ -8,17 +8,23 @@ import Stream from "../components/Stream";
 import Chat from "../components/Chat";
 import ProgressBar from "../components/ProgressBar";
 //import logo from "../Images/Online_bla.png";
-import Reaact, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Index() {
+  const [cachedData, setCachedData] = useState(null);
+
   const { data, error } = useSWR("/api/state", fetcher, {
     refreshInterval: 5000,
   });
 
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
+  useEffect(() => {
+    setCachedData(data);
+  }, [data]); 
+
+  if (error && !cachedData) return <div>Failed to load</div>;
+  if (!data && !cachedData) return <div>Loading...</div>;
 
   return (
     <>
