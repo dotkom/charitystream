@@ -20,7 +20,7 @@ export default function StretchGoals(props) {
         <table class="table-auto">
           <tbody>
             {nextGoals.map((item, i) => {
-              if (i == nextGoals.length - 1) {
+              if (i >= nextGoals.length - 2) {
                 return (
                   <tr key={item.description}>
                     <td
