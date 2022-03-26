@@ -1,7 +1,7 @@
 import Link from "next/link";
 import useSWR from "swr";
 import AuctionItems from "../components/AuctionItems";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const NavBar = () => (
@@ -18,6 +18,7 @@ export default function AuctionItemsPage() {
   const { data, error } = useSWR("/api/state", fetcher, {
     refreshInterval: 10000,
   });
+  const [cachedData, setCachedData] = useState(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,8 +26,13 @@ export default function AuctionItemsPage() {
     }, 10000);
   }, []);
 
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
+  useEffect(() => {
+    setCachedData(data);
+  }, [data]); 
+
+  if (error && !cachedData) return <div>Failed to load</div>;
+  if (!data && !cachedData) return <div>Loading...</div>;
+
 
   return (
     <div>
