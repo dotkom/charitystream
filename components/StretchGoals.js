@@ -12,7 +12,6 @@ export default function StretchGoals(props) {
     .filter((goal) => goal.goal < totalAmount)
     .reverse();
 
-  console.log(reachedGoals);
   return (
     <div className="flex flex-wrap h-full p-2 overflow-hidden justify-evenly">
       <div className="text-center bg-regalblue rounded-md p-5 ">
