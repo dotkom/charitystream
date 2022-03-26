@@ -16,13 +16,13 @@ const NavBar = () => (
 
 export default function AuctionItemsPage() {
   const { data, error } = useSWR("/api/state", fetcher, {
-    refreshInterval: 5000,
+    refreshInterval: 10000,
   });
 
   useEffect(() => {
     const interval = setInterval(() => {
       fetch("/api/updateAuction", { method: "POST" });
-    }, 5000);
+    }, 10000);
   }, []);
 
   if (error) return <div>Failed to load</div>;
