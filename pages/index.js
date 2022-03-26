@@ -35,6 +35,7 @@ export default function Index() {
           <ProgressBar
             stretchGoals={data.stretchGoals}
             totalAmount={data.totalAmount}
+            auctions={data.auctions}
           />
         </div>
 

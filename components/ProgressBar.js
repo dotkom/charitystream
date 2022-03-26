@@ -1,10 +1,13 @@
 export default function ProgressBar(props) {
-  const { stretchGoals, totalAmount } = props;
+  const { stretchGoals, totalAmount, auctions } = props;
   const maxAmount = stretchGoals[stretchGoals.length - 1]?.goal;
   const meterLen = Math.floor((totalAmount / maxAmount) * 100);
   const nextGoal = stretchGoals.find(
     (stretchGoal) => stretchGoal.goal > totalAmount
   );
+
+  const sumHighestBids = auctions.reduce((acc, curr) => acc + curr.price, 0);
+  const totalAmountSum = totalAmount + sumHighestBids;
 
   const nextGoals = stretchGoals
     .filter((stretchGoal) => stretchGoal.goal > totalAmount)
@@ -12,6 +15,7 @@ export default function ProgressBar(props) {
   const reachedGoals = stretchGoals
     .filter((goal) => goal.goal < totalAmount)
     .reverse();
+
   return (
     <div className="flex flex-wrap items-center h-full p-2 overflow-hidden justify-evenly">
       <div
@@ -27,7 +31,7 @@ export default function ProgressBar(props) {
               style={{ width: `${meterLen}%`, transition: "width 2s" }}
               className="bg-turquise shadow-none"
             ></div>
-            <p className="absolute flex items-center justify-center w-full h-full text-2xl text-beige">{`${totalAmount}kr av ${maxAmount}kr`}</p>
+            <p className="absolute flex items-center justify-center w-full h-full text-2xl text-beige">{`${totalAmountSum}kr av ${maxAmount}kr`}</p>
           </div>
           <div className="flex w-full text-left">
             <p className="p-3 text-4xl">Neste stretch goal: </p>
