@@ -28,9 +28,9 @@ const TopVipp = ({ vipp }) => {
           style={{ background: "#39AC37" }}
         >
           <img src="https://i.imgur.com/RVgB3E6.png" width="50px" />
-          <span class="flex justify-between w-full">
-            <span class="p-3">{vipp.name} donerte</span>
-            <span class="p-3 font-bold">{vipp.amount}kr!!</span>
+          <span className="flex justify-between w-full">
+            <span className="p-3">{vipp.name} donerte</span>
+            <span className="p-3 font-bold">{vipp.amount}kr!!</span>
           </span>
         </div>
       )}
@@ -39,12 +39,12 @@ const TopVipp = ({ vipp }) => {
 };
 
 const Vipps = (props) => {
-  const vipps = props.items.map((item) => (
-    <Vipp name={item.name} amount={item.amount} />
+  const vipps = props.items.map((item, index) => (
+    <Vipp key={index} name={item.name} amount={item.amount} />
   ));
 
   return (
-    <div class="flex flex-col justify-center">
+    <div className="flex flex-col justify-center">
       <TopVipp vipp={props.topDonor} />
       <hr />
       <div className="m-1 text-4xl mb-2 text-center">Siste donasjoner</div>
