@@ -9,20 +9,13 @@ import {
   Bid,
 } from "../../models/schema.js";
 
-const username = process.env.DATABASE_USER;
-const password = process.env.DATABASE_PASSWORD;
-const dbname = process.env.DATABASE_NAME;
-export const url = process.env.DATABASE_URL;
+export const url = process.env.DATABASE_URI;
 
 export default async function handler(_, res) {
   mongoose.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
-    user: username,
-    pass: password,
-    dbName: dbname,
+    bufferCommands: false,
   });
 
   // Get all the state we need for the page
