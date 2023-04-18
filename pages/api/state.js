@@ -12,6 +12,7 @@ import {
 export const url = process.env.DATABASE_URI;
 
 export default async function handler(_, res) {
+  console.log("URI:");
   console.log(url);
   mongoose.connect(url, {
     useNewUrlParser: true,
