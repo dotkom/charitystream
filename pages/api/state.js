@@ -12,8 +12,6 @@ import {
 export const url = process.env.DATABASE_URI;
 
 export default async function handler(_, res) {
-  console.log("URI:");
-  console.log(url);
   mongoose.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -23,7 +21,6 @@ export default async function handler(_, res) {
   // Get all the state we need for the page
 
   const auctions = await Auction.find({});
-  console.log(auctions);
   const bids = await Bid.find({});
   const vipps = await Vipps.find({});
   const streamLink = await StreamLink.findOne().sort({ date: -1 }).limit(1);

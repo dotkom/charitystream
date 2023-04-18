@@ -21,7 +21,7 @@ export default function Index() {
 
   useEffect(() => {
     setCachedData(data);
-  }, [data]); 
+  }, [data]);
 
   if (error && !cachedData) return <div>Failed to load</div>;
   if (!data && !cachedData) return <div>Loading...</div>;
@@ -34,7 +34,7 @@ export default function Index() {
             " w-screen sm:w-3/4 p-5 flex text-5xl bg-emerald-400 flex-wrap"
           }
         >
-          Veldedighetsfest 2022 <PagesButtons />
+          Veldedighetsfest 2023 <PagesButtons />
           <hr />
         </div>
         <div className={"w-screen"}>
@@ -43,15 +43,6 @@ export default function Index() {
             totalAmount={data.totalAmount}
             auctions={data.auctions}
           />
-        </div>
-
-        <div className="flex max-w-full w-screen flex-grow justify-center flex-wrap">
-          <div className={"text-lg"}>
-            <Stream link={data.streamLink} />
-          </div>
-          <div className={"flex-grow max-w-lg"}>
-            <Chat link={data.streamLink} />
-          </div>
         </div>
 
         <div className="flex max-w-full flex-grow justify-evenly flex-wrap mt-10 text-beige">
